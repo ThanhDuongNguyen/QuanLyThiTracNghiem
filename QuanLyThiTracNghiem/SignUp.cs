@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace QuanLyThiTracNghiem
 {
-    public partial class Login : Form
+    public partial class SignUp : Form
     {
-        public Login()
+        public SignUp()
         {
             InitializeComponent();
         }

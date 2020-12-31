@@ -77,6 +77,7 @@ namespace QuanLyThiTracNghiem
             // 
             // pictureBox1
             // 
+            this.pictureBox1.ErrorImage = null;
             this.pictureBox1.Location = new System.Drawing.Point(119, 37);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(100, 100);
@@ -163,9 +164,9 @@ namespace QuanLyThiTracNghiem
             this.lbSignin.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.lbSignin.Location = new System.Drawing.Point(238, 363);
             this.lbSignin.Name = "lbSignin";
-            this.lbSignin.Size = new System.Drawing.Size(55, 16);
+            this.lbSignin.Size = new System.Drawing.Size(60, 16);
             this.lbSignin.TabIndex = 11;
-            this.lbSignin.Text = "Sign in";
+            this.lbSignin.Text = "Sign up";
             // 
             // Login
             // 
