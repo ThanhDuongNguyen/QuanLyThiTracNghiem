@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace QuanLyThiTracNghiem
 {
-    public partial class GiaoVien : Form
+    public partial class Admin : Form
     {
-        public GiaoVien()
+        public Admin()
         {
             InitializeComponent();
-        }
-
-        private void groupBox15_Enter(object sender, EventArgs e)
-        {
-
         }
     }
 }

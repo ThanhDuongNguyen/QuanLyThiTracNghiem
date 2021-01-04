@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tcLamBaiTracNghiem_HS = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.button6 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
@@ -123,15 +123,20 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.button4 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btSuaThongTin_HS = new System.Windows.Forms.Button();
+            this.btDangXuat_HS = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.tbHoTenHS = new System.Windows.Forms.TextBox();
+            this.tbMSSV = new System.Windows.Forms.TextBox();
+            this.tbLop_HS = new System.Windows.Forms.TextBox();
+            this.tbKhoa_HS = new System.Windows.Forms.TextBox();
+            this.tbNgaySinh_HS = new System.Windows.Forms.TextBox();
             this.groupBox2.SuspendLayout();
-            this.tabControl1.SuspendLayout();
+            this.tcLamBaiTracNghiem_HS.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox8.SuspendLayout();
             this.groupBox6.SuspendLayout();
@@ -156,26 +161,25 @@
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.groupBox2.Controls.Add(this.tabControl1);
+            this.groupBox2.Controls.Add(this.tcLamBaiTracNghiem_HS);
             this.groupBox2.Location = new System.Drawing.Point(231, 12);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(1109, 718);
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "groupBox2";
             // 
-            // tabControl1
+            // tcLamBaiTracNghiem_HS
             // 
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Controls.Add(this.tabPage3);
-            this.tabControl1.Controls.Add(this.tabPage4);
-            this.tabControl1.Controls.Add(this.tabPage5);
-            this.tabControl1.Location = new System.Drawing.Point(6, 21);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1097, 656);
-            this.tabControl1.TabIndex = 0;
+            this.tcLamBaiTracNghiem_HS.Controls.Add(this.tabPage1);
+            this.tcLamBaiTracNghiem_HS.Controls.Add(this.tabPage2);
+            this.tcLamBaiTracNghiem_HS.Controls.Add(this.tabPage3);
+            this.tcLamBaiTracNghiem_HS.Controls.Add(this.tabPage4);
+            this.tcLamBaiTracNghiem_HS.Controls.Add(this.tabPage5);
+            this.tcLamBaiTracNghiem_HS.Location = new System.Drawing.Point(6, 21);
+            this.tcLamBaiTracNghiem_HS.Name = "tcLamBaiTracNghiem_HS";
+            this.tcLamBaiTracNghiem_HS.SelectedIndex = 0;
+            this.tcLamBaiTracNghiem_HS.Size = new System.Drawing.Size(1097, 656);
+            this.tcLamBaiTracNghiem_HS.TabIndex = 0;
             // 
             // tabPage1
             // 
@@ -350,7 +354,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(572, 26);
+            this.label11.Location = new System.Drawing.Point(561, 26);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(40, 17);
             this.label11.TabIndex = 11;
@@ -359,7 +363,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(572, 69);
+            this.label10.Location = new System.Drawing.Point(561, 69);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(68, 17);
             this.label10.TabIndex = 10;
@@ -1073,6 +1077,11 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.groupBox1.Controls.Add(this.tbNgaySinh_HS);
+            this.groupBox1.Controls.Add(this.tbKhoa_HS);
+            this.groupBox1.Controls.Add(this.tbLop_HS);
+            this.groupBox1.Controls.Add(this.tbMSSV);
+            this.groupBox1.Controls.Add(this.tbHoTenHS);
             this.groupBox1.Controls.Add(this.groupBox4);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label4);
@@ -1089,8 +1098,8 @@
             // groupBox4
             // 
             this.groupBox4.Controls.Add(this.button4);
-            this.groupBox4.Controls.Add(this.button1);
-            this.groupBox4.Controls.Add(this.button3);
+            this.groupBox4.Controls.Add(this.btSuaThongTin_HS);
+            this.groupBox4.Controls.Add(this.btDangXuat_HS);
             this.groupBox4.Location = new System.Drawing.Point(0, 436);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(200, 265);
@@ -1107,23 +1116,23 @@
             this.button4.Text = "Thoát";
             this.button4.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // btSuaThongTin_HS
             // 
-            this.button1.Location = new System.Drawing.Point(6, 21);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(188, 60);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Sửa thông tin cá nhân";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btSuaThongTin_HS.Location = new System.Drawing.Point(6, 21);
+            this.btSuaThongTin_HS.Name = "btSuaThongTin_HS";
+            this.btSuaThongTin_HS.Size = new System.Drawing.Size(188, 60);
+            this.btSuaThongTin_HS.TabIndex = 2;
+            this.btSuaThongTin_HS.Text = "Sửa thông tin cá nhân";
+            this.btSuaThongTin_HS.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // btDangXuat_HS
             // 
-            this.button3.Location = new System.Drawing.Point(6, 101);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(188, 60);
-            this.button3.TabIndex = 8;
-            this.button3.Text = "Đăng Xuất";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btDangXuat_HS.Location = new System.Drawing.Point(6, 101);
+            this.btDangXuat_HS.Name = "btDangXuat_HS";
+            this.btDangXuat_HS.Size = new System.Drawing.Size(188, 60);
+            this.btDangXuat_HS.TabIndex = 8;
+            this.btDangXuat_HS.Text = "Đăng Xuất";
+            this.btDangXuat_HS.UseVisualStyleBackColor = true;
             // 
             // label5
             // 
@@ -1170,6 +1179,41 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Họ tên :";
             // 
+            // tbHoTenHS
+            // 
+            this.tbHoTenHS.Location = new System.Drawing.Point(70, 52);
+            this.tbHoTenHS.Name = "tbHoTenHS";
+            this.tbHoTenHS.Size = new System.Drawing.Size(115, 22);
+            this.tbHoTenHS.TabIndex = 7;
+            // 
+            // tbMSSV
+            // 
+            this.tbMSSV.Location = new System.Drawing.Point(70, 86);
+            this.tbMSSV.Name = "tbMSSV";
+            this.tbMSSV.Size = new System.Drawing.Size(115, 22);
+            this.tbMSSV.TabIndex = 8;
+            // 
+            // tbLop_HS
+            // 
+            this.tbLop_HS.Location = new System.Drawing.Point(70, 117);
+            this.tbLop_HS.Name = "tbLop_HS";
+            this.tbLop_HS.Size = new System.Drawing.Size(115, 22);
+            this.tbLop_HS.TabIndex = 9;
+            // 
+            // tbKhoa_HS
+            // 
+            this.tbKhoa_HS.Location = new System.Drawing.Point(70, 152);
+            this.tbKhoa_HS.Name = "tbKhoa_HS";
+            this.tbKhoa_HS.Size = new System.Drawing.Size(115, 22);
+            this.tbKhoa_HS.TabIndex = 10;
+            // 
+            // tbNgaySinh_HS
+            // 
+            this.tbNgaySinh_HS.Location = new System.Drawing.Point(85, 182);
+            this.tbNgaySinh_HS.Name = "tbNgaySinh_HS";
+            this.tbNgaySinh_HS.Size = new System.Drawing.Size(100, 22);
+            this.tbNgaySinh_HS.TabIndex = 11;
+            // 
             // HocSinh
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1180,7 +1224,7 @@
             this.Name = "HocSinh";
             this.Text = "HocSinh";
             this.groupBox2.ResumeLayout(false);
-            this.tabControl1.ResumeLayout(false);
+            this.tcLamBaiTracNghiem_HS.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.groupBox8.ResumeLayout(false);
             this.groupBox8.PerformLayout();
@@ -1219,7 +1263,7 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabControl tcLamBaiTracNghiem_HS;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button5;
@@ -1313,12 +1357,17 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btSuaThongTin_HS;
+        private System.Windows.Forms.Button btDangXuat_HS;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox tbNgaySinh_HS;
+        private System.Windows.Forms.TextBox tbKhoa_HS;
+        private System.Windows.Forms.TextBox tbLop_HS;
+        private System.Windows.Forms.TextBox tbMSSV;
+        private System.Windows.Forms.TextBox tbHoTenHS;
     }
 }
