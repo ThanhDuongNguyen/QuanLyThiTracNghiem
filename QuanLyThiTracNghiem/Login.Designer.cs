@@ -49,22 +49,20 @@ namespace QuanLyThiTracNghiem
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Bauhaus 93", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Arial Narrow", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.label1.Location = new System.Drawing.Point(151, 188);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(82, 153);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(141, 45);
+            this.label1.Size = new System.Drawing.Size(180, 37);
             this.label1.TabIndex = 1;
-            this.label1.Text = "LOG IN";
+            this.label1.Text = "ĐĂNG NHẬP";
             // 
             // pictureBox3
             // 
             this.pictureBox3.Image = global::QuanLyThiTracNghiem.Properties.Resources.pw;
-            this.pictureBox3.Location = new System.Drawing.Point(72, 383);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox3.Location = new System.Drawing.Point(54, 311);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(39, 36);
+            this.pictureBox3.Size = new System.Drawing.Size(29, 29);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox3.TabIndex = 3;
             this.pictureBox3.TabStop = false;
@@ -72,10 +70,9 @@ namespace QuanLyThiTracNghiem
             // pictureBox2
             // 
             this.pictureBox2.Image = global::QuanLyThiTracNghiem.Properties.Resources.User;
-            this.pictureBox2.Location = new System.Drawing.Point(72, 305);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox2.Location = new System.Drawing.Point(54, 248);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(39, 39);
+            this.pictureBox2.Size = new System.Drawing.Size(29, 32);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 2;
             this.pictureBox2.TabStop = false;
@@ -84,10 +81,9 @@ namespace QuanLyThiTracNghiem
             // 
             this.pictureBox1.ErrorImage = null;
             this.pictureBox1.Image = global::QuanLyThiTracNghiem.Properties.Resources._1713924;
-            this.pictureBox1.Location = new System.Drawing.Point(159, 46);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Location = new System.Drawing.Point(119, 37);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(133, 123);
+            this.pictureBox1.Size = new System.Drawing.Size(100, 100);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -95,29 +91,26 @@ namespace QuanLyThiTracNghiem
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.Highlight;
-            this.panel1.Location = new System.Drawing.Point(72, 352);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Location = new System.Drawing.Point(54, 286);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(315, 1);
+            this.panel1.Size = new System.Drawing.Size(236, 1);
             this.panel1.TabIndex = 4;
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.Highlight;
-            this.panel2.Location = new System.Drawing.Point(72, 426);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel2.Location = new System.Drawing.Point(54, 346);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(315, 1);
+            this.panel2.Size = new System.Drawing.Size(236, 1);
             this.panel2.TabIndex = 5;
             // 
             // btnLogin
             // 
             this.btnLogin.BackColor = System.Drawing.SystemColors.Highlight;
             this.btnLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogin.Location = new System.Drawing.Point(72, 469);
-            this.btnLogin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnLogin.Location = new System.Drawing.Point(54, 381);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(315, 41);
+            this.btnLogin.Size = new System.Drawing.Size(236, 33);
             this.btnLogin.TabIndex = 6;
             this.btnLogin.Text = "LOG IN";
             this.btnLogin.UseVisualStyleBackColor = false;
@@ -128,11 +121,10 @@ namespace QuanLyThiTracNghiem
             this.txtUsername.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUsername.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.txtUsername.Location = new System.Drawing.Point(119, 305);
-            this.txtUsername.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtUsername.Location = new System.Drawing.Point(89, 248);
             this.txtUsername.Multiline = true;
             this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(268, 30);
+            this.txtUsername.Size = new System.Drawing.Size(201, 24);
             this.txtUsername.TabIndex = 7;
             // 
             // txtPw
@@ -141,20 +133,18 @@ namespace QuanLyThiTracNghiem
             this.txtPw.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtPw.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPw.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.txtPw.Location = new System.Drawing.Point(119, 383);
-            this.txtPw.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtPw.Location = new System.Drawing.Point(89, 311);
             this.txtPw.Multiline = true;
             this.txtPw.Name = "txtPw";
-            this.txtPw.Size = new System.Drawing.Size(268, 30);
+            this.txtPw.Size = new System.Drawing.Size(201, 24);
             this.txtPw.TabIndex = 8;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(0, 0);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(46, 17);
+            this.label2.Size = new System.Drawing.Size(35, 13);
             this.label2.TabIndex = 9;
             this.label2.Text = "label2";
             // 
@@ -163,12 +153,11 @@ namespace QuanLyThiTracNghiem
             this.lbExit.AutoSize = true;
             this.lbExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbExit.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.lbExit.Location = new System.Drawing.Point(213, 543);
-            this.lbExit.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbExit.Location = new System.Drawing.Point(144, 440);
             this.lbExit.Name = "lbExit";
-            this.lbExit.Size = new System.Drawing.Size(41, 20);
+            this.lbExit.Size = new System.Drawing.Size(48, 16);
             this.lbExit.TabIndex = 10;
-            this.lbExit.Text = "Exit";
+            this.lbExit.Text = "Thoát";
             // 
             // lbSignin
             // 
@@ -176,19 +165,18 @@ namespace QuanLyThiTracNghiem
             this.lbSignin.BackColor = System.Drawing.Color.White;
             this.lbSignin.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbSignin.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.lbSignin.Location = new System.Drawing.Point(317, 447);
-            this.lbSignin.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbSignin.Location = new System.Drawing.Point(226, 362);
             this.lbSignin.Name = "lbSignin";
-            this.lbSignin.Size = new System.Drawing.Size(72, 20);
+            this.lbSignin.Size = new System.Drawing.Size(64, 16);
             this.lbSignin.TabIndex = 11;
-            this.lbSignin.Text = "Sign up";
+            this.lbSignin.Text = "Đăng ký";
             // 
             // Login
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(471, 617);
+            this.ClientSize = new System.Drawing.Size(353, 501);
             this.Controls.Add(this.lbSignin);
             this.Controls.Add(this.lbExit);
             this.Controls.Add(this.label2);
@@ -202,7 +190,6 @@ namespace QuanLyThiTracNghiem
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
             this.ForeColor = System.Drawing.SystemColors.Window;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Login";
             this.Text = "Login";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();

@@ -62,9 +62,9 @@ namespace QuanLyThiTracNghiem
             this.label1.ForeColor = System.Drawing.SystemColors.Highlight;
             this.label1.Location = new System.Drawing.Point(123, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(127, 39);
+            this.label1.Size = new System.Drawing.Size(132, 39);
             this.label1.TabIndex = 2;
-            this.label1.Text = "Sign Up";
+            this.label1.Text = "Đăng ký";
             // 
             // txtUsername
             // 
@@ -133,9 +133,9 @@ namespace QuanLyThiTracNghiem
             this.lbExit2.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.lbExit2.Location = new System.Drawing.Point(180, 551);
             this.lbExit2.Name = "lbExit2";
-            this.lbExit2.Size = new System.Drawing.Size(33, 16);
+            this.lbExit2.Size = new System.Drawing.Size(48, 16);
             this.lbExit2.TabIndex = 15;
-            this.lbExit2.Text = "Exit";
+            this.lbExit2.Text = "Thoát";
             // 
             // btnSignUp
             // 
@@ -156,9 +156,9 @@ namespace QuanLyThiTracNghiem
             this.label2.ForeColor = System.Drawing.SystemColors.Highlight;
             this.label2.Location = new System.Drawing.Point(83, 52);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(83, 16);
+            this.label2.Size = new System.Drawing.Size(85, 16);
             this.label2.TabIndex = 16;
-            this.label2.Text = "Username:";
+            this.label2.Text = "Tài khoản :";
             // 
             // label3
             // 
@@ -167,9 +167,9 @@ namespace QuanLyThiTracNghiem
             this.label3.ForeColor = System.Drawing.SystemColors.Highlight;
             this.label3.Location = new System.Drawing.Point(85, 113);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(80, 16);
+            this.label3.Size = new System.Drawing.Size(78, 16);
             this.label3.TabIndex = 17;
-            this.label3.Text = "Password:";
+            this.label3.Text = "Mật khẩu :";
             // 
             // label4
             // 
@@ -178,9 +178,9 @@ namespace QuanLyThiTracNghiem
             this.label4.ForeColor = System.Drawing.SystemColors.Highlight;
             this.label4.Location = new System.Drawing.Point(85, 184);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(136, 16);
+            this.label4.Size = new System.Drawing.Size(140, 16);
             this.label4.TabIndex = 18;
-            this.label4.Text = "Confirm Password:";
+            this.label4.Text = "Nhập lại mật khẩu :";
             // 
             // label5
             // 
@@ -189,9 +189,9 @@ namespace QuanLyThiTracNghiem
             this.label5.ForeColor = System.Drawing.SystemColors.Highlight;
             this.label5.Location = new System.Drawing.Point(83, 257);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(79, 16);
+            this.label5.Size = new System.Drawing.Size(61, 16);
             this.label5.TabIndex = 21;
-            this.label5.Text = "Full name:";
+            this.label5.Text = "Họ tên :";
             // 
             // tbxFullname
             // 
@@ -220,9 +220,9 @@ namespace QuanLyThiTracNghiem
             this.label6.ForeColor = System.Drawing.SystemColors.Highlight;
             this.label6.Location = new System.Drawing.Point(88, 397);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(128, 16);
+            this.label6.Size = new System.Drawing.Size(60, 16);
             this.label6.TabIndex = 24;
-            this.label6.Text = "Decentralization :";
+            this.label6.Text = "Quyền :";
             // 
             // cBQuyen
             // 
@@ -263,9 +263,9 @@ namespace QuanLyThiTracNghiem
             this.label7.ForeColor = System.Drawing.SystemColors.Highlight;
             this.label7.Location = new System.Drawing.Point(88, 451);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(51, 16);
+            this.label7.Size = new System.Drawing.Size(42, 16);
             this.label7.TabIndex = 27;
-            this.label7.Text = "Class:";
+            this.label7.Text = "Lớp :";
             // 
             // label8
             // 

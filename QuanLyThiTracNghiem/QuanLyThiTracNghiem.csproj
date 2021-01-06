@@ -58,6 +58,48 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAdmin.Designer.cs">
+      <DependentUpon>frmAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmChonbaithi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmChonbaithi.Designer.cs">
+      <DependentUpon>frmChonbaithi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmChonDeOn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmChonDeOn.Designer.cs">
+      <DependentUpon>frmChonDeOn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDapAn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDapAn.Designer.cs">
+      <DependentUpon>frmDapAn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmKetQua.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmKetQua.Designer.cs">
+      <DependentUpon>frmKetQua.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmThongTin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmThongTin.Designer.cs">
+      <DependentUpon>frmThongTin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmUserReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmUserReport.Designer.cs">
+      <DependentUpon>frmUserReport.cs</DependentUpon>
+    </Compile>
     <Compile Include="fromChangePsW.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -97,6 +139,27 @@
     </Compile>
     <EmbeddedResource Include="Admin.resx">
       <DependentUpon>Admin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAdmin.resx">
+      <DependentUpon>frmAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmChonbaithi.resx">
+      <DependentUpon>frmChonbaithi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmChonDeOn.resx">
+      <DependentUpon>frmChonDeOn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDapAn.resx">
+      <DependentUpon>frmDapAn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmKetQua.resx">
+      <DependentUpon>frmKetQua.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmThongTin.resx">
+      <DependentUpon>frmThongTin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmUserReport.resx">
+      <DependentUpon>frmUserReport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="fromChangePsW.resx">
       <DependentUpon>fromChangePsW.cs</DependentUpon>
