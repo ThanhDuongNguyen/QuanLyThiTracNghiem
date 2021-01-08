@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="QuanLyThi">
+  <DataContextMoniker Name="/QuanLyThiDataContext" />
+  <nestedChildShapes>
+    <classShape Id="81de466e-cb28-48f9-8df9-110227c09251" absoluteBounds="2.875, 1.625, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/QuanLyThiDataContext/HocSinh" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a5346d8b-1d11-4698-9d12-0ca971de8275" absoluteBounds="2.89, 2.085, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>
