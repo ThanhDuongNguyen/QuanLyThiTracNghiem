@@ -1,10 +1,18 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="QLThi" Class="QuanLyThiDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-L7RBUOD\SQLEXPRESS;Initial Catalog=QLThi;Integrated Security=True" SettingsObjectName="QuanLyThiTracNghiem.Properties.Settings" SettingsPropertyName="QLThiConnectionString" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-HDF49GM;Initial Catalog=QLThi;Integrated Security=True" SettingsObjectName="QuanLyThiTracNghiem.Properties.Settings" SettingsPropertyName="QLThiConnectionString1" Provider="System.Data.SqlClient" />
   <Table Name="dbo.HocSinh" Member="HocSinhs">
     <Type Name="HocSinh">
       <Column Name="MaHS" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="Lop" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
       <Column Name="HoTen" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="NgaySinh" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.GiaoVien" Member="GiaoViens">
+    <Type Name="GiaoVien">
+      <Column Name="MaGV" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="HoTen" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="DiaChi" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="NgaySinh" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
     </Type>
   </Table>

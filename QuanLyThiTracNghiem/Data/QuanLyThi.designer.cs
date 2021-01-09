@@ -33,7 +33,7 @@ namespace QuanLyThiTracNghiem.Data
     #endregion
 		
 		public QuanLyThiDataContext() : 
-				base(global::QuanLyThiTracNghiem.Properties.Settings.Default.QLThiConnectionString, mappingSource)
+				base(global::QuanLyThiTracNghiem.Properties.Settings.Default.QLThiConnectionString1, mappingSource)
 		{
 			OnCreated();
 		}
@@ -67,6 +67,14 @@ namespace QuanLyThiTracNghiem.Data
 			get
 			{
 				return this.GetTable<HocSinh>();
+			}
+		}
+		
+		public System.Data.Linq.Table<GiaoVien> GiaoViens
+		{
+			get
+			{
+				return this.GetTable<GiaoVien>();
 			}
 		}
 	}
@@ -131,6 +139,87 @@ namespace QuanLyThiTracNghiem.Data
 				if ((this._HoTen != value))
 				{
 					this._HoTen = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NgaySinh", DbType="DateTime NOT NULL")]
+		public System.DateTime NgaySinh
+		{
+			get
+			{
+				return this._NgaySinh;
+			}
+			set
+			{
+				if ((this._NgaySinh != value))
+				{
+					this._NgaySinh = value;
+				}
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.GiaoVien")]
+	public partial class GiaoVien
+	{
+		
+		private int _MaGV;
+		
+		private string _HoTen;
+		
+		private string _DiaChi;
+		
+		private System.DateTime _NgaySinh;
+		
+		public GiaoVien()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaGV", DbType="Int NOT NULL")]
+		public int MaGV
+		{
+			get
+			{
+				return this._MaGV;
+			}
+			set
+			{
+				if ((this._MaGV != value))
+				{
+					this._MaGV = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HoTen", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string HoTen
+		{
+			get
+			{
+				return this._HoTen;
+			}
+			set
+			{
+				if ((this._HoTen != value))
+				{
+					this._HoTen = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DiaChi", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string DiaChi
+		{
+			get
+			{
+				return this._DiaChi;
+			}
+			set
+			{
+				if ((this._DiaChi != value))
+				{
+					this._DiaChi = value;
 				}
 			}
 		}

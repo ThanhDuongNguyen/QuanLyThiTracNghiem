@@ -112,11 +112,11 @@
     <Compile Include="fromChangePsW.Designer.cs">
       <DependentUpon>fromChangePsW.cs</DependentUpon>
     </Compile>
-    <Compile Include="GiaoVien.cs">
+    <Compile Include="frmGiaoVien.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GiaoVien.Designer.cs">
-      <DependentUpon>GiaoVien.cs</DependentUpon>
+    <Compile Include="frmGiaoVien.Designer.cs">
+      <DependentUpon>frmGiaoVien.cs</DependentUpon>
     </Compile>
     <Compile Include="frmHocSinh.cs">
       <SubType>Form</SubType>
@@ -137,6 +137,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Repository\GiaoVienRepository.cs" />
     <Compile Include="Repository\HocSinhRepository.cs" />
     <Compile Include="Repository\Interface\IRepositoryBase.cs" />
     <Compile Include="Repository\RepositoryBase.cs" />
@@ -173,8 +174,8 @@
     <EmbeddedResource Include="fromChangePsW.resx">
       <DependentUpon>fromChangePsW.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GiaoVien.resx">
-      <DependentUpon>GiaoVien.cs</DependentUpon>
+    <EmbeddedResource Include="frmGiaoVien.resx">
+      <DependentUpon>frmGiaoVien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmHocSinh.resx">
       <DependentUpon>frmHocSinh.cs</DependentUpon>
