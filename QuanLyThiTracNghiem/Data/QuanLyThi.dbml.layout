@@ -2,17 +2,50 @@
 <ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="QuanLyThi">
   <DataContextMoniker Name="/QuanLyThiDataContext" />
   <nestedChildShapes>
-    <classShape Id="81de466e-cb28-48f9-8df9-110227c09251" absoluteBounds="2.875, 1.625, 2, 1.5785953776041666">
-      <DataClassMoniker Name="/QuanLyThiDataContext/HocSinh" />
-      <nestedChildShapes>
-        <elementListCompartment Id="a5346d8b-1d11-4698-9d12-0ca971de8275" absoluteBounds="2.89, 2.085, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="b90afaaa-4452-4a7a-bf12-e39ca34ca3d1" absoluteBounds="6, 1, 2, 1.5785953776041666">
+    <classShape Id="c1b4e55b-db06-4045-8d5c-3c0fdd6d400e" absoluteBounds="6.25, 1, 2, 1.7708968098958331">
       <DataClassMoniker Name="/QuanLyThiDataContext/GiaoVien" />
       <nestedChildShapes>
-        <elementListCompartment Id="1f1de1d3-9bc6-492a-b59b-e1bc001abdbc" absoluteBounds="6.015, 1.46, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="2db245ba-600d-417f-abdb-f837eac60b3f" absoluteBounds="6.265, 1.46, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
+    <classShape Id="9ea57310-bee3-4875-bbc4-c8195507365f" absoluteBounds="0.75, 2.625, 2, 1.1939925130208335">
+      <DataClassMoniker Name="/QuanLyThiDataContext/Quyen" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b128eb92-b01a-40e6-aaf4-2951259e2419" absoluteBounds="0.765, 3.085, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="281822cb-3ae6-4bcc-9807-b35dbf98675e" absoluteBounds="6.25, 3.5, 2, 1.7708968098958327">
+      <DataClassMoniker Name="/QuanLyThiDataContext/HocSinh" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d9e06a93-b31b-48c0-ab0b-bb51247cdd81" absoluteBounds="6.265, 3.96, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="aa0ba5cf-6b22-49f9-83a7-5da548604f2f" absoluteBounds="3.5, 2.375, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/QuanLyThiDataContext/NguoiDung" />
+      <nestedChildShapes>
+        <elementListCompartment Id="188e7c32-94f1-4a7f-9410-b6eaac69d0bb" absoluteBounds="3.515, 2.835, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5.5 : 2.57294840494792); (6.25 : 2.57294840494792)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/QuanLyThiDataContext/NguoiDung/NguoiDung_GiaoVien" />
+      <nodes>
+        <classShapeMoniker Id="aa0ba5cf-6b22-49f9-83a7-5da548604f2f" />
+        <classShapeMoniker Id="c1b4e55b-db06-4045-8d5c-3c0fdd6d400e" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 3.72679768880208); (6.25 : 3.72679768880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/QuanLyThiDataContext/NguoiDung/NguoiDung_HocSinh" />
+      <nodes>
+        <classShapeMoniker Id="aa0ba5cf-6b22-49f9-83a7-5da548604f2f" />
+        <classShapeMoniker Id="281822cb-3ae6-4bcc-9807-b35dbf98675e" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 3.22199625651042); (3.5 : 3.22199625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/QuanLyThiDataContext/Quyen/Quyen_NguoiDung" />
+      <nodes>
+        <classShapeMoniker Id="9ea57310-bee3-4875-bbc4-c8195507365f" />
+        <classShapeMoniker Id="aa0ba5cf-6b22-49f9-83a7-5da548604f2f" />
+      </nodes>
+    </associationConnector>
   </nestedChildShapes>
 </ordesignerObjectsDiagram>

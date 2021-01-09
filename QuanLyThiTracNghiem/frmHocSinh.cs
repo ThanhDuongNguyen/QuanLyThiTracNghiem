@@ -27,8 +27,16 @@ namespace QuanLyThiTracNghiem
             HocSinh hocSinh = new HocSinh();
 
             hocSinh =_hocSinhRepository.FindByCondition(p=>p.MaHS.Equals(1)).SingleOrDefault();
-            Binding binding = new Binding("Text", hocSinh, "HoTen");
-            lblHoTen.DataBindings.Add(binding);
+
+
+            Binding bindingHoTen = new Binding("Text", hocSinh, "HoTen");
+            lblHoTen.DataBindings.Add(bindingHoTen);
+            Binding bindingLop = new Binding("Text", hocSinh, "Lop");
+            lblLop.DataBindings.Add(bindingLop);
+            Binding bindingMaHS = new Binding("Text", hocSinh, "MaHS");
+            lblMaHS.DataBindings.Add(bindingMaHS);
+            Binding bindingNgaySinh = new Binding("Text", hocSinh, "NgaySinh", true, DataSourceUpdateMode.OnPropertyChanged, true, "MM/dd/yyyy");
+            lblNgaySinh.DataBindings.Add(bindingNgaySinh);
         }
     }
 }

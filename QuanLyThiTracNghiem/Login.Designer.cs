@@ -59,7 +59,7 @@ namespace QuanLyThiTracNghiem
             // 
             // pictureBox3
             // 
-            this.pictureBox3.Image = global::QuanLyThiTracNghiem.Properties.Resources.pw;
+            //this.pictureBox3.Image = global::QuanLyThiTracNghiem.Properties.Resources.pw;
             this.pictureBox3.Location = new System.Drawing.Point(54, 311);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(29, 29);
@@ -69,7 +69,7 @@ namespace QuanLyThiTracNghiem
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Image = global::QuanLyThiTracNghiem.Properties.Resources.User;
+            //this.pictureBox2.Image = global::QuanLyThiTracNghiem.Properties.Resources.User;
             this.pictureBox2.Location = new System.Drawing.Point(54, 248);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(29, 32);
@@ -80,7 +80,7 @@ namespace QuanLyThiTracNghiem
             // pictureBox1
             // 
             this.pictureBox1.ErrorImage = null;
-            this.pictureBox1.Image = global::QuanLyThiTracNghiem.Properties.Resources._1713924;
+            //this.pictureBox1.Image = global::QuanLyThiTracNghiem.Properties.Resources._1713924;
             this.pictureBox1.Location = new System.Drawing.Point(119, 37);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(100, 100);

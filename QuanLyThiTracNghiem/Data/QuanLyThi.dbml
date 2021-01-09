@@ -1,19 +1,41 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="QLThi" Class="QuanLyThiDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-HDF49GM;Initial Catalog=QLThi;Integrated Security=True" SettingsObjectName="QuanLyThiTracNghiem.Properties.Settings" SettingsPropertyName="QLThiConnectionString1" Provider="System.Data.SqlClient" />
-  <Table Name="dbo.HocSinh" Member="HocSinhs">
-    <Type Name="HocSinh">
-      <Column Name="MaHS" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Lop" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
-      <Column Name="HoTen" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="NgaySinh" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
-    </Type>
-  </Table>
+  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-L7RBUOD\SQLEXPRESS;Initial Catalog=QLThi;Integrated Security=True" SettingsObjectName="QuanLyThiTracNghiem.Properties.Settings" SettingsPropertyName="QLThiConnectionString" Provider="System.Data.SqlClient" />
   <Table Name="dbo.GiaoVien" Member="GiaoViens">
     <Type Name="GiaoVien">
-      <Column Name="MaGV" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MaGV" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="HoTen" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="DiaChi" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="NgaySinh" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="NguoiDungID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="NguoiDung_GiaoVien" Member="NguoiDung" ThisKey="NguoiDungID" OtherKey="IDNguoiDung" Type="NguoiDung" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Quyen" Member="Quyens">
+    <Type Name="Quyen">
+      <Column Name="QuyenID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TenQuyen" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="Quyen_NguoiDung" Member="NguoiDungs" ThisKey="QuyenID" OtherKey="Quyen" Type="NguoiDung" />
+    </Type>
+  </Table>
+  <Table Name="dbo.HocSinh" Member="HocSinhs">
+    <Type Name="HocSinh">
+      <Column Name="MaHS" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Lop" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="HoTen" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="NgaySinh" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="NguoiDungID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="NguoiDung_HocSinh" Member="NguoiDung" ThisKey="NguoiDungID" OtherKey="IDNguoiDung" Type="NguoiDung" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.NguoiDung" Member="NguoiDungs">
+    <Type Name="NguoiDung">
+      <Column Name="IDNguoiDung" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TenTaiKhoan" Type="System.String" DbType="NChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="MatKhauHash" Type="System.String" DbType="NChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Quyen" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="NguoiDung_GiaoVien" Member="GiaoViens" ThisKey="IDNguoiDung" OtherKey="NguoiDungID" Type="GiaoVien" />
+      <Association Name="NguoiDung_HocSinh" Member="HocSinhs" ThisKey="IDNguoiDung" OtherKey="NguoiDungID" Type="HocSinh" />
+      <Association Name="Quyen_NguoiDung" Member="Quyen1" ThisKey="Quyen" OtherKey="QuyenID" Type="Quyen" IsForeignKey="true" />
     </Type>
   </Table>
 </Database>

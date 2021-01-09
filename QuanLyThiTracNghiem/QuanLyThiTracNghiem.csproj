@@ -124,6 +124,12 @@
     <Compile Include="frmHocSinh.Designer.cs">
       <DependentUpon>frmHocSinh.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\HeThong\frmDangNhap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\HeThong\frmDangNhap.Designer.cs">
+      <DependentUpon>frmDangNhap.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -140,7 +146,9 @@
     <Compile Include="Repository\GiaoVienRepository.cs" />
     <Compile Include="Repository\HocSinhRepository.cs" />
     <Compile Include="Repository\Interface\IRepositoryBase.cs" />
+    <Compile Include="Repository\NguoiDungRepository.cs" />
     <Compile Include="Repository\RepositoryBase.cs" />
+    <Compile Include="Services\AuthService.cs" />
     <Compile Include="SignUp.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -179,6 +187,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmHocSinh.resx">
       <DependentUpon>frmHocSinh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\HeThong\frmDangNhap.resx">
+      <DependentUpon>frmDangNhap.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
@@ -226,6 +237,15 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\clipart514952.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LoginUser.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\UserLogin.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
