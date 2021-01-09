@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label34 = new System.Windows.Forms.Label();
             this.tbTaoKyThiThu_ThoiGianLam_GV_QLOT = new System.Windows.Forms.TextBox();
             this.label32 = new System.Windows.Forms.Label();
@@ -203,7 +203,6 @@
             this.label19 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.lblDiaChiGv = new System.Windows.Forms.Label();
             this.lblMaGV = new System.Windows.Forms.Label();
             this.lblHoTenGv = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -212,6 +211,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btSuaThongTinCaNhan_GV = new System.Windows.Forms.Button();
             this.btThoat_GV = new System.Windows.Forms.Button();
+            this.lbDchiGv = new System.Windows.Forms.Label();
+            this.lblNsGv = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTaoKyThiThu_DsThiSinh_GV_QLOT)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDanhSachDeThi_GV_QLDT)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTaoKyThiThu_DsDeThi_GV_QLOT)).BeginInit();
@@ -420,8 +421,8 @@
             // 
             // dgvDanhSachDeThi_GV_QLDT
             // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.dgvDanhSachDeThi_GV_QLDT.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.dgvDanhSachDeThi_GV_QLDT.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvDanhSachDeThi_GV_QLDT.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -1050,7 +1051,6 @@
             this.groupBox15.TabIndex = 2;
             this.groupBox15.TabStop = false;
             this.groupBox15.Text = "Thống kê câu hỏi";
-
             // 
             // groupBox9
             // 
@@ -1895,7 +1895,8 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.lblDiaChiGv);
+            this.groupBox1.Controls.Add(this.lblNsGv);
+            this.groupBox1.Controls.Add(this.lbDchiGv);
             this.groupBox1.Controls.Add(this.lblMaGV);
             this.groupBox1.Controls.Add(this.lblHoTenGv);
             this.groupBox1.Controls.Add(this.label5);
@@ -1908,14 +1909,6 @@
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin giáo viên";
-            // 
-            // lblDiaChiGv
-            // 
-            this.lblDiaChiGv.AutoSize = true;
-            this.lblDiaChiGv.Location = new System.Drawing.Point(95, 113);
-            this.lblDiaChiGv.Name = "lblDiaChiGv";
-            this.lblDiaChiGv.Size = new System.Drawing.Size(0, 17);
-            this.lblDiaChiGv.TabIndex = 17;
             // 
             // lblMaGV
             // 
@@ -1986,6 +1979,22 @@
             this.btThoat_GV.TabIndex = 7;
             this.btThoat_GV.Text = "Thoát";
             this.btThoat_GV.UseVisualStyleBackColor = true;
+            // 
+            // lbDchiGv
+            // 
+            this.lbDchiGv.AutoSize = true;
+            this.lbDchiGv.Location = new System.Drawing.Point(95, 115);
+            this.lbDchiGv.Name = "lbDchiGv";
+            this.lbDchiGv.Size = new System.Drawing.Size(0, 17);
+            this.lbDchiGv.TabIndex = 17;
+            // 
+            // lblNsGv
+            // 
+            this.lblNsGv.AutoSize = true;
+            this.lblNsGv.Location = new System.Drawing.Point(95, 151);
+            this.lblNsGv.Name = "lblNsGv";
+            this.lblNsGv.Size = new System.Drawing.Size(0, 17);
+            this.lblNsGv.TabIndex = 18;
             // 
             // frmGiaoVien
             // 
@@ -2228,8 +2237,9 @@
         private System.Windows.Forms.Button btTimKyThi_ThongKe_GV_QLHS;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label38;
-        private System.Windows.Forms.Label lblDiaChiGv;
         private System.Windows.Forms.Label lblMaGV;
         private System.Windows.Forms.Label lblHoTenGv;
+        private System.Windows.Forms.Label lblNsGv;
+        private System.Windows.Forms.Label lbDchiGv;
     }
 }
