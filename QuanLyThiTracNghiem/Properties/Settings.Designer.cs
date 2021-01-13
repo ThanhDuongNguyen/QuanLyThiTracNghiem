@@ -26,22 +26,11 @@ namespace QuanLyThiTracNghiem.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-L7RBUOD\\SQLEXPRESS;Initial Catalog=QLThi;Integrated Security=" +
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=.;Initial Catalog=QLThi;Integrated Security=" +
             "True")]
         public string QLThiConnectionString {
             get {
                 return ((string)(this["QLThiConnectionString"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-L7RBUOD\\SQLEXPRESS;Initial Catalog=QLThi;Integrated Security=" +
-            "True")]
-        public string QLThiConnectionString1 {
-            get {
-                return ((string)(this["QLThiConnectionString1"]));
             }
         }
     }

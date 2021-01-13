@@ -16,10 +16,12 @@ namespace QuanLyThiTracNghiem
     public partial class frmGiaoVien : Form
     {
         private GiaoVienRepository _giaoVienRepository;
-        public frmGiaoVien()
+        private NguoiDung _nguoiDung;
+        public frmGiaoVien(NguoiDung nguoiDung)
         {
             InitializeComponent();
             _giaoVienRepository = new GiaoVienRepository();
+            _nguoiDung = nguoiDung;
             LoadThongTinGiaoVien();
         }
 
@@ -27,7 +29,7 @@ namespace QuanLyThiTracNghiem
         {
             GiaoVien giaoVien = new GiaoVien();
 
-            giaoVien = _giaoVienRepository.FindByCondition(p => p.MaGV.Equals(1)).SingleOrDefault();
+            giaoVien = _giaoVienRepository.FindByCondition(p => p.NguoiDungID.Equals(_nguoiDung.IDNguoiDung)).SingleOrDefault();
             Binding binding = new Binding("Text", giaoVien, "HoTen");
             Binding bdmaGv = new Binding("Text", giaoVien, "MaGV");
             Binding bdDchi = new Binding("Text", giaoVien, "DiaChi");

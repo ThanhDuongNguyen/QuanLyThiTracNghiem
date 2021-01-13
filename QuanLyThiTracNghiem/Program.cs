@@ -1,14 +1,16 @@
 ﻿using QuanLyThiTracNghiem.GUI.HeThong;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using QuanLyThiTracNghiem.Utils;
 namespace QuanLyThiTracNghiem
 {
     static class Program
     {
+        public static string databaseName;
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
@@ -17,7 +19,16 @@ namespace QuanLyThiTracNghiem
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmDangNhap());
+            databaseName = ConfigurationManager.AppSettings["DatabaseName"];
+            string connectionString = ConfigurationManager.ConnectionStrings["QuanLyThiTracNghiem.Properties.Settings.QLThiConnectionString"].ConnectionString;
+            if (Utils.Utils.KiemTraKetNoiTonTai(connectionString))
+            {
+                Application.Run(new frmDangNhap());
+            }
+            else
+            {
+                Application.Run(new frmCauHinhDB());
+            }
         }
     }
 }

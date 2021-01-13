@@ -14,6 +14,7 @@ namespace QuanLyThiTracNghiem.GUI.HeThong
 {
     public partial class frmDangNhap : Form
     {
+        AuthService _authService = new AuthService();
         public frmDangNhap()
         {
             InitializeComponent();
@@ -22,7 +23,7 @@ namespace QuanLyThiTracNghiem.GUI.HeThong
 
         private void btnDangNhap_Click(object sender, EventArgs e)
         {
-            AuthService _authService = new AuthService();
+            
             NguoiDung nguoiDung = _authService.DangNhap(txtTaiKhoan.Text, txtMatKhau.Text);
             if (nguoiDung != null)
             {
@@ -30,15 +31,17 @@ namespace QuanLyThiTracNghiem.GUI.HeThong
                 switch (nguoiDung.Quyen)
                 {
                     case 1:
+                        frmAdmin frmAdmin = new frmAdmin();
+                        frmAdmin.ShowDialog();
                         break;
                     case 2:
                         GiaoVien giaoVien = _authService.LayThongTinGiaoVien(nguoiDung.IDNguoiDung);
-                        frmGiaoVien frmGiaoVien = new frmGiaoVien();
-                        frmGiaoVien.ShowDialog();
+                        frmGiaoVien frmGV = new frmGiaoVien(nguoiDung);
+                        frmGV.Show();
                         break;
                     case 3:
                         HocSinh hocSinh = _authService.LayThongTinHocSinh(nguoiDung.IDNguoiDung);
-                        frmHocSinh frmHocSinh = new frmHocSinh();
+                        frmHocSinh frmHocSinh = new frmHocSinh(nguoiDung);
                         frmHocSinh.ShowDialog();
                         break;
                     default:

@@ -15,10 +15,12 @@ namespace QuanLyThiTracNghiem
     public partial class frmHocSinh : Form
     {
         private HocSinhRepository _hocSinhRepository;
-        public frmHocSinh()
+        private NguoiDung _nguoiDung;
+        public frmHocSinh(NguoiDung nguoiDung)
         {
             InitializeComponent();
             _hocSinhRepository = new HocSinhRepository();
+            _nguoiDung = nguoiDung;
             LoadThongTinHocSinh();
         }
 
@@ -26,7 +28,7 @@ namespace QuanLyThiTracNghiem
         {
             HocSinh hocSinh = new HocSinh();
 
-            hocSinh =_hocSinhRepository.FindByCondition(p=>p.MaHS.Equals(1)).SingleOrDefault();
+            hocSinh =_hocSinhRepository.FindByCondition(p=>p.NguoiDungID.Equals(_nguoiDung.IDNguoiDung)).SingleOrDefault();
 
 
             Binding bindingHoTen = new Binding("Text", hocSinh, "HoTen");

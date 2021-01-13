@@ -63,6 +63,26 @@ namespace QuanLyThiTracNghiem.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap data_setting_server_ {
+            get {
+                object obj = ResourceManager.GetObject("data-setting-server-", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap data_setting_server_database_ {
+            get {
+                object obj = ResourceManager.GetObject("data-setting-server-database-", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap UserLogin {
             get {
                 object obj = ResourceManager.GetObject("UserLogin", resourceCulture);

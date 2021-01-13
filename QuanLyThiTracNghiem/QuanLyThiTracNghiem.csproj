@@ -34,6 +34,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Linq" />
     <Reference Include="System.Xml.Linq" />
@@ -47,11 +48,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Admin.cs">
+    <Compile Include="GUI\Admin\frmAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Admin.Designer.cs">
-      <DependentUpon>Admin.cs</DependentUpon>
+    <Compile Include="GUI\Admin\frmAdmin.Designer.cs">
+      <DependentUpon>frmAdmin.cs</DependentUpon>
     </Compile>
     <Compile Include="Data\QuanLyThi.designer.cs">
       <AutoGen>True</AutoGen>
@@ -63,12 +64,6 @@
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmAdmin.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmAdmin.Designer.cs">
-      <DependentUpon>frmAdmin.cs</DependentUpon>
     </Compile>
     <Compile Include="frmChonbaithi.cs">
       <SubType>Form</SubType>
@@ -112,17 +107,23 @@
     <Compile Include="fromChangePsW.Designer.cs">
       <DependentUpon>fromChangePsW.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmGiaoVien.cs">
+    <Compile Include="GUI\GiaoVien\frmGiaoVien.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmGiaoVien.Designer.cs">
+    <Compile Include="GUI\GiaoVien\frmGiaoVien.Designer.cs">
       <DependentUpon>frmGiaoVien.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmHocSinh.cs">
+    <Compile Include="GUI\HocSinh\frmHocSinh.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmHocSinh.Designer.cs">
+    <Compile Include="GUI\HocSinh\frmHocSinh.Designer.cs">
       <DependentUpon>frmHocSinh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\HeThong\frmCauHinhDB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\HeThong\frmCauHinhDB.Designer.cs">
+      <DependentUpon>frmCauHinhDB.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\HeThong\frmDangNhap.cs">
       <SubType>Form</SubType>
@@ -155,10 +156,8 @@
     <Compile Include="SignUp.Designer.cs">
       <DependentUpon>SignUp.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Admin.resx">
-      <DependentUpon>Admin.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmAdmin.resx">
+    <Compile Include="Utils\Utils.cs" />
+    <EmbeddedResource Include="GUI\Admin\frmAdmin.resx">
       <DependentUpon>frmAdmin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmChonbaithi.resx">
@@ -182,11 +181,14 @@
     <EmbeddedResource Include="fromChangePsW.resx">
       <DependentUpon>fromChangePsW.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmGiaoVien.resx">
+    <EmbeddedResource Include="GUI\GiaoVien\frmGiaoVien.resx">
       <DependentUpon>frmGiaoVien.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmHocSinh.resx">
+    <EmbeddedResource Include="GUI\HocSinh\frmHocSinh.resx">
       <DependentUpon>frmHocSinh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\HeThong\frmCauHinhDB.resx">
+      <DependentUpon>frmCauHinhDB.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\HeThong\frmDangNhap.resx">
       <DependentUpon>frmDangNhap.cs</DependentUpon>
@@ -224,17 +226,12 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\1713924.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\User.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\pw.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="GUI\GiaoVien\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
   </ItemGroup>
@@ -246,6 +243,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\UserLogin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\data-setting-server-database-.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\data-setting-server-.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
