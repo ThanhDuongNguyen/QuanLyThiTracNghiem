@@ -23,7 +23,7 @@ namespace QuanLyThiTracNghiem
             string connectionString = ConfigurationManager.ConnectionStrings["QuanLyThiTracNghiem.Properties.Settings.QLThiConnectionString"].ConnectionString;
             if (Utils.Utils.KiemTraKetNoiTonTai(connectionString))
             {
-                Application.Run(new frmDangNhap());
+                Application.Run(new frmAdmin());
             }
             else
             {

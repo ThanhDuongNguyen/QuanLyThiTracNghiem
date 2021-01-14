@@ -159,6 +159,7 @@
     <Compile Include="Utils\Utils.cs" />
     <EmbeddedResource Include="GUI\Admin\frmAdmin.resx">
       <DependentUpon>frmAdmin.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="frmChonbaithi.resx">
       <DependentUpon>frmChonbaithi.cs</DependentUpon>

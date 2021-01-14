@@ -1,30 +1,68 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="QLThi" Class="QuanLyThiDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-L7RBUOD\SQLEXPRESS;Initial Catalog=QLThi;Integrated Security=True" SettingsObjectName="QuanLyThiTracNghiem.Properties.Settings" SettingsPropertyName="QLThiConnectionString" Provider="System.Data.SqlClient" />
-  <Table Name="dbo.GiaoVien" Member="GiaoViens">
-    <Type Name="GiaoVien">
-      <Column Name="MaGV" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="HoTen" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="DiaChi" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="NgaySinh" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
-      <Column Name="NguoiDungID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Association Name="NguoiDung_GiaoVien" Member="NguoiDung" ThisKey="NguoiDungID" OtherKey="IDNguoiDung" Type="NguoiDung" IsForeignKey="true" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-L7RBUOD\SQLEXPRESS;Initial Catalog=QLThi;Integrated Security=True" SettingsObjectName="QuanLyThiTracNghiem.Properties.Settings" SettingsPropertyName="QLThiConnectionString1" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.CapHoc" Member="CapHocs">
+    <Type Name="CapHoc">
+      <Column Name="IDCapHoc" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CapHoc" Member="CapHoc1" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
     </Type>
   </Table>
   <Table Name="dbo.Quyen" Member="Quyens">
     <Type Name="Quyen">
       <Column Name="QuyenID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="TenQuyen" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="TenQuyen" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
       <Association Name="Quyen_NguoiDung" Member="NguoiDungs" ThisKey="QuyenID" OtherKey="Quyen" Type="NguoiDung" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CauHoi" Member="CauHois">
+    <Type Name="CauHoi">
+      <Column Name="IDCauHoi" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CauHoi" Member="CauHoi1" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="MonHoc" Type="System.String" DbType="NVarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="CapHoc" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CauTraLoi" Member="CauTraLois">
+    <Type Name="CauTraLoi">
+      <Column Name="NguoiDungID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MaDeThi" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CauHoiID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="DapAn" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MaKyThi" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DapAn" Member="DapAns">
+    <Type Name="DapAn">
+      <Column Name="DapAn" Member="DapAn1" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="IDCauHoi" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IsDung" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="STTDapAn" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.GiaoVien" Member="GiaoViens">
+    <Type Name="GiaoVien">
+      <Column Name="MaGV" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="HoTen" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="DiaChi" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="NgaySinh" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="NguoiDungID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="NguoiDung_GiaoVien" Member="NguoiDung" ThisKey="NguoiDungID" OtherKey="IDNguoiDung" Type="NguoiDung" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.HocSinh" Member="HocSinhs">
     <Type Name="HocSinh">
-      <Column Name="MaHS" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MaHS" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="Lop" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
       <Column Name="HoTen" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="NgaySinh" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
-      <Column Name="NguoiDungID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NguoiDungID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DiaChi" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Association Name="NguoiDung_HocSinh" Member="NguoiDung" ThisKey="NguoiDungID" OtherKey="IDNguoiDung" Type="NguoiDung" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MonHoc" Member="MonHocs">
+    <Type Name="MonHoc">
+      <Column Name="MaMonHoc" Type="System.String" DbType="VarChar(255) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TenMonHoc" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
     </Type>
   </Table>
   <Table Name="dbo.NguoiDung" Member="NguoiDungs">
