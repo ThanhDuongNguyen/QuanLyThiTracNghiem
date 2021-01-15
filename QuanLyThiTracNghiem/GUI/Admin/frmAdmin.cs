@@ -1,4 +1,6 @@
-﻿using QuanLyThiTracNghiem.Data;
+﻿using ClosedXML.Excel;
+using ExcelDataReader;
+using QuanLyThiTracNghiem.Data;
 using QuanLyThiTracNghiem.Repository;
 using QuanLyThiTracNghiem.Validate;
 using System;
@@ -6,9 +8,11 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Transactions;
 using System.Windows.Forms;
 using static QuanLyThiTracNghiem.Utils.Utils;
 
@@ -22,7 +26,7 @@ namespace QuanLyThiTracNghiem
 
         private GiaoVienRepository _giaoVienRepository = new GiaoVienRepository();
         private HocSinhRepository _hocSinhRepository = new HocSinhRepository();
-
+        private NguoiDungRepository _nguoiDungRepository = new NguoiDungRepository();
 
         private BindingManagerBase _bindingManagerGV;
         private BindingManagerBase _bindingManagerHS;
@@ -45,19 +49,19 @@ namespace QuanLyThiTracNghiem
 
         private void DgvHocSinh_SelectionChanged(object sender, EventArgs e)
         {
-            
+
         }
 
         private void DgvGiaoVien_SelectionChanged(object sender, EventArgs e)
         {
-            
+
         }
 
         //Che mật khẩu 
         private void DgvGiaoVien_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
             if (dgvGiaoVien.Columns["MatKhauHash"].Index == e.ColumnIndex && e.Value != null)
-                    e.Value = new string('*', e.Value.ToString().Length);
+                e.Value = new string('*', e.Value.ToString().Length);
         }
 
         private void DgvHocSinh_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
@@ -74,7 +78,7 @@ namespace QuanLyThiTracNghiem
             {
                 LoadGiaoVien();
             }
-            else if(tcAdmin.SelectedTab.Tag.Equals(QuanLyTabPage.QuanLyHocSinh.ToString()))
+            else if (tcAdmin.SelectedTab.Tag.Equals(QuanLyTabPage.QuanLyHocSinh.ToString()))
             {
                 LoadHocSinh();
             }
@@ -85,12 +89,9 @@ namespace QuanLyThiTracNghiem
 
         private void LoadGiaoVien()
         {
-            //if (bindingGV.Count > 0)
-            //{
-            //    bindingGV.ResetBindings(true);
-            //    return;
-            //}
+
             dgvGiaoVien.DataBindings.Clear();
+
             bindingGV.DataSource = _giaoVienRepository.FindAll().Select(giaovien => new
             {
                 giaovien.MaGV,
@@ -100,6 +101,7 @@ namespace QuanLyThiTracNghiem
                 giaovien.NguoiDung.TenTaiKhoan,
                 giaovien.NguoiDung.MatKhauHash
             });
+
             dgvGiaoVien.DataSource = bindingGV;
 
             txtHoTen.DataBindings.Clear();
@@ -118,15 +120,12 @@ namespace QuanLyThiTracNghiem
             txtMatKhau.DataBindings.Add("Text", bindingGV, "MatKhauHash");
             _bindingManagerGV = BindingContext[bindingGV];
         }
-        
+
         private void LoadHocSinh()
         {
-            //if (bindingHS.Count > 0)
-            //{
-            //    bindingHS.ResetBindings(true);
-            //    return;
-            //}
+
             dgvHocSinh.DataBindings.Clear();
+
 
             bindingHS.DataSource = _hocSinhRepository.FindAll().Select(hocsinh => new
             {
@@ -221,7 +220,15 @@ namespace QuanLyThiTracNghiem
 
         private void btnSuaHS_Click(object sender, EventArgs e)
         {
+
             string oldHS = dgvHocSinh.SelectedRows[0].Cells["MaHS"].Value.ToString();
+
+            if (oldHS != txtMaHS.Text)
+            {
+                MessageBox.Show("Không thể chỉnh sửa mã học sinh", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             HocSinh hs = _hocSinhRepository.FindByCondition(p => p.MaHS.Equals(oldHS)).Single();
             hs.MaHS = txtMaHS.Text;
             hs.Lop = txtLop.Text;
@@ -238,6 +245,12 @@ namespace QuanLyThiTracNghiem
         private void btnSuaGV_Click(object sender, EventArgs e)
         {
             string oldGV = dgvGiaoVien.SelectedRows[0].Cells["MaGV"].Value.ToString();
+
+            if (oldGV != txtMaGV.Text)
+            {
+                MessageBox.Show("Không thể chỉnh sửa mã giáo viên", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             GiaoVien gv = _giaoVienRepository.FindByCondition(p => p.MaGV.Equals(oldGV)).Single();
             gv.MaGV = txtMaGV.Text;
             gv.HoTen = txtHoTen.Text;
@@ -249,5 +262,278 @@ namespace QuanLyThiTracNghiem
             _giaoVienRepository.Update();
             LoadGiaoVien();
         }
+
+        private void btnXoaHS_Click(object sender, EventArgs e)
+        {
+            string oldHS = dgvHocSinh.SelectedRows[0].Cells["MaHS"].Value.ToString();
+            HocSinh hs = _hocSinhRepository.FindByCondition(p => p.MaHS.Equals(oldHS)).Single();
+            int nguoiDungID = hs.NguoiDungID;
+            _hocSinhRepository.Delete(hs);
+            _hocSinhRepository.Update();
+
+            NguoiDung nguoiDung = _nguoiDungRepository.FindByCondition(p => p.IDNguoiDung.Equals(nguoiDungID)).Single();
+
+            _nguoiDungRepository.Delete(nguoiDung);
+            _nguoiDungRepository.Update();
+
+            LoadHocSinh();
+        }
+
+        private void btnXoaGV_Click(object sender, EventArgs e)
+        {
+            string oldGV = dgvGiaoVien.SelectedRows[0].Cells["MaGV"].Value.ToString();
+            GiaoVien gv = _giaoVienRepository.FindByCondition(p => p.MaGV.Equals(oldGV)).Single();
+            int nguoiDungID = gv.NguoiDungID;
+            _giaoVienRepository.Delete(gv);
+            _giaoVienRepository.Update();
+
+            NguoiDung nguoiDung = _nguoiDungRepository.FindByCondition(p => p.IDNguoiDung.Equals(nguoiDungID)).Single();
+
+            _nguoiDungRepository.Delete(nguoiDung);
+            _nguoiDungRepository.Update();
+
+            LoadGiaoVien();
+        }
+
+        private void btnThemHS_Click(object sender, EventArgs e)
+        {
+            if (_hocSinhRepository.FindByCondition(p => p.MaHS.Equals(txtMaHS.Text)).SingleOrDefault() != null)
+            {
+                MessageBox.Show("Mã học sinh này đã tồn tại", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (_nguoiDungRepository.FindByCondition(p => p.TenTaiKhoan.Equals(txtTenTaiKhoanHS.Text)).SingleOrDefault() != null)
+            {
+                MessageBox.Show("Tên tài khoản này đã tồn tại", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            NguoiDung nd = new NguoiDung();
+            nd.TenTaiKhoan = txtTenTaiKhoanHS.Text;
+            nd.MatKhauHash = txtMatKhauHS.Text;
+            nd.Quyen = 3;
+            _nguoiDungRepository.Create(nd);
+            _nguoiDungRepository.Update();
+
+            HocSinh hs = new HocSinh();
+            hs.MaHS = txtMaHS.Text;
+            hs.Lop = txtLop.Text;
+            hs.HoTen = txtHoTenHS.Text;
+            hs.DiaChi = txtDiaChiHS.Text;
+            hs.NgaySinh = dtpNgaySinhHS.Value;
+            hs.NguoiDungID = nd.IDNguoiDung;
+            _hocSinhRepository.Create(hs);
+            _hocSinhRepository.Update();
+            LoadHocSinh();
+        }
+
+        private void btnThemGV_Click(object sender, EventArgs e)
+        {
+            if (_giaoVienRepository.FindByCondition(p => p.MaGV.Equals(txtMaGV.Text)).SingleOrDefault() != null)
+            {
+                MessageBox.Show("Mã giáo viên này đã tồn tại", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+
+            if (_nguoiDungRepository.FindByCondition(p => p.TenTaiKhoan.Equals(txtTenTaiKhoan.Text)).SingleOrDefault() != null)
+            {
+                MessageBox.Show("Tên tài khoản này đã tồn tại", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            NguoiDung nd = new NguoiDung();
+            nd.TenTaiKhoan = txtTenTaiKhoan.Text;
+            nd.MatKhauHash = txtMatKhau.Text;
+            nd.Quyen = 2;
+            _nguoiDungRepository.Create(nd);
+            _nguoiDungRepository.Update();
+
+            GiaoVien gv = new GiaoVien();
+            gv.MaGV = txtMaGV.Text;
+            gv.HoTen = txtHoTen.Text;
+            gv.DiaChi = txtDiaChi.Text;
+            gv.NgaySinh = dtpNgaySinh.Value;
+            gv.NguoiDungID = nd.IDNguoiDung;
+
+            _giaoVienRepository.Create(gv);
+            _giaoVienRepository.Update();
+            LoadGiaoVien();
+        }
+
+        private void ImportMenuItem_Click(object sender, EventArgs e)
+        {
+
+            int soluongHSThanhCong = 0;
+            int soluongGVThanhCong = 0;
+            int giaoVienTrung = 0;
+            int hocSinhTrung = 0;
+            DataSet ds = new DataSet();
+            using (OpenFileDialog openFileDialog = new OpenFileDialog()
+            { ValidateNames = true, Filter = "Excel Workbook|*.xlsx|Excel Workbook 97-2003|*.xls" })
+                try
+                {
+
+                    if (openFileDialog.ShowDialog() == DialogResult.OK)
+                    {
+                        using (var stream = File.Open(openFileDialog.FileName, FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
+                        {
+                            IExcelDataReader reader;
+
+                            if (openFileDialog.FilterIndex == 2)
+                            {
+                                reader = ExcelReaderFactory.CreateBinaryReader(stream);
+                            }
+                            else
+                            {
+                                reader = ExcelReaderFactory.CreateOpenXmlReader(stream);
+                            }
+
+                            ds = reader.AsDataSet(new ExcelDataSetConfiguration()
+                            {
+                                ConfigureDataTable = (_) => new ExcelDataTableConfiguration()
+                                {
+                                    UseHeaderRow = true
+                                }
+                            });
+                            reader.Close();
+                        }
+                    }
+
+                    DataTable dataGiaoVien = ds.Tables["GiaoVien"];
+                    DataTable dataHocSinh = ds.Tables["HocSinh"];
+
+                    foreach (DataRow row in dataGiaoVien.Rows)
+                    {
+                        if (_giaoVienRepository.FindByCondition(gv => gv.MaGV == row["MaGV"].ToString()).SingleOrDefault() != null)
+                        {
+
+                            giaoVienTrung++;
+                            continue;
+                        }
+                        else
+                        {
+                            NguoiDung nd = new NguoiDung()
+                            {
+                                TenTaiKhoan = row["TenTaiKhoan"].ToString(),
+                                MatKhauHash = row["MatKhau"].ToString(),
+                                Quyen = 2
+                            };
+                            _nguoiDungRepository.Create(nd);
+                            _nguoiDungRepository.Update();
+
+                            _giaoVienRepository.Create(new GiaoVien
+                            {
+                                MaGV = row["MaGV"].ToString(),
+                                HoTen = row["HoTen"].ToString(),
+                                NgaySinh = DateTime.Parse(row["NgaySinh"].ToString()),
+                                DiaChi = row["DiaChi"].ToString(),
+                                NguoiDungID = nd.IDNguoiDung
+                            });
+                            _giaoVienRepository.Update();
+                            soluongGVThanhCong++;
+                        }
+                    }
+                    foreach (DataRow row in dataHocSinh.Rows)
+                    {
+                        if (_hocSinhRepository.FindByCondition(nd => nd.MaHS == row["MaHS"].ToString()).SingleOrDefault() != null)
+                        {
+                            hocSinhTrung++;
+                            continue;
+                        }
+                        else
+                        {
+                            NguoiDung nd = new NguoiDung()
+                            {
+                                TenTaiKhoan = row["TenTaiKhoan"].ToString(),
+                                MatKhauHash = row["MatKhau"].ToString(),
+                                Quyen = 3
+                            };
+                            _nguoiDungRepository.Create(nd);
+                            _nguoiDungRepository.Update();
+
+                            _hocSinhRepository.Create(new HocSinh
+                            {
+                                MaHS = row["MaHS"].ToString(),
+                                HoTen = row["HoTen"].ToString(),
+                                NgaySinh = DateTime.Parse(row["NgaySinh"].ToString()),
+                                DiaChi = row["DiaChi"].ToString(),
+                                Lop = row["Lop"].ToString(),
+                                NguoiDungID = nd.IDNguoiDung
+                            });
+                            _hocSinhRepository.Update();
+                            soluongHSThanhCong++;
+                        }
+                    }
+                }
+                catch (Exception excep)
+                {
+                    MessageBox.Show(excep.Message, "Lỗi file", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show($"Số học sinh thêm thành công: {soluongHSThanhCong}\n" +
+                        $"Số giáo viên thêm thành công: {soluongGVThanhCong}\n" +
+                        $"Số học sinh bị trùng: {hocSinhTrung}\n" +
+                        $"Số giáo viên bị trùng: {giaoVienTrung}\n");
+                    return;
+                }
+            MessageBox.Show($"Số học sinh thêm thành công: {soluongHSThanhCong}\n" +
+                        $"Số giáo viên thêm thành công: {soluongGVThanhCong}\n" +
+                        $"Số học sinh bị trùng: {hocSinhTrung}\n" +
+                        $"Số giáo viên bị trùng: {giaoVienTrung}\n");
+        }
+
+        private void ExportMenuItem_Click(object sender, EventArgs e)
+        {
+            using (var sfd = new SaveFileDialog()
+            {
+                CreatePrompt = false,
+                OverwritePrompt = true,
+                AddExtension = true,
+                Filter = "Excel Workbook|*.xlsx|Excel Workbook 97-2003|*.xls",
+                ValidateNames = true,
+            })
+            {
+                if (sfd.ShowDialog() == DialogResult.OK)
+                {
+                    DataTable dtHocSinh = new DataTable();
+                    dtHocSinh.TableName = "HocSinh";
+                    dtHocSinh.Columns.Add("MaHS", typeof(string));
+                    dtHocSinh.Columns.Add("HoTen", typeof(string));
+                    dtHocSinh.Columns.Add("NgaySinh", typeof(DateTime));
+                    dtHocSinh.Columns.Add("Lop", typeof(string));
+                    dtHocSinh.Columns.Add("DiaChi", typeof(string));
+                    dtHocSinh.Columns.Add("TenTaiKhoan", typeof(string));
+                    dtHocSinh.Columns.Add("MatKhau", typeof(string));
+
+                    DataTable dtGiaoVien = new DataTable();
+                    dtGiaoVien.TableName = "GiaoVien";
+                    dtGiaoVien.Columns.Add("MaGV", typeof(string));
+                    dtGiaoVien.Columns.Add("HoTen", typeof(string));
+                    dtGiaoVien.Columns.Add("NgaySinh", typeof(DateTime));
+                    dtGiaoVien.Columns.Add("DiaChi", typeof(string));
+                    dtGiaoVien.Columns.Add("TenTaiKhoan", typeof(string));
+                    dtGiaoVien.Columns.Add("MatKhau", typeof(string));
+
+                    List <HocSinh> hocSinhs = _hocSinhRepository.FindAll().ToList();
+                    foreach (var hs in hocSinhs)
+                    {
+                        dtHocSinh.Rows.Add(hs.MaHS, hs.HoTen, hs.NgaySinh, hs.Lop,hs.DiaChi, hs.NguoiDung.TenTaiKhoan,hs.NguoiDung.MatKhauHash);
+                    }
+
+                    List<GiaoVien> giaoViens = _giaoVienRepository.FindAll().ToList();
+                    foreach (var gv in giaoViens)
+                    {
+                        dtGiaoVien.Rows.Add(gv.MaGV, gv.HoTen, gv.NgaySinh, gv.DiaChi,gv.NguoiDung.TenTaiKhoan, gv.NguoiDung.MatKhauHash);
+                    }
+
+                    XLWorkbook wb = new XLWorkbook();
+                    wb.Worksheets.Add(dtHocSinh, dtHocSinh.TableName);
+                    wb.Worksheets.Add(dtGiaoVien, dtGiaoVien.TableName);
+
+                    wb.SaveAs(sfd.InitialDirectory + sfd.FileName);
+                }
+            }
+        }
     }
+
 }

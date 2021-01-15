@@ -812,7 +812,7 @@ namespace QuanLyThiTracNghiem.Data
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DiaChi", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DiaChi", DbType="NVarChar(150) NOT NULL", CanBeNull=false)]
 		public string DiaChi
 		{
 			get
@@ -1079,7 +1079,7 @@ namespace QuanLyThiTracNghiem.Data
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DiaChi", DbType="NVarChar(50)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DiaChi", DbType="NVarChar(150)")]
 		public string DiaChi
 		{
 			get

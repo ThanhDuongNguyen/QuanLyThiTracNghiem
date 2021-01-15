@@ -49,8 +49,8 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dtpNgaySinhHS = new System.Windows.Forms.DateTimePicker();
             this.btnSuaHS = new System.Windows.Forms.Button();
-            this.btnXoa = new System.Windows.Forms.Button();
-            this.btnThem = new System.Windows.Forms.Button();
+            this.btnXoaHS = new System.Windows.Forms.Button();
+            this.btnThemHS = new System.Windows.Forms.Button();
             this.label14 = new System.Windows.Forms.Label();
             this.txtMatKhauHS = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
@@ -86,9 +86,9 @@
             this.label9 = new System.Windows.Forms.Label();
             this.btnSuaGV = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
-            this.button9 = new System.Windows.Forms.Button();
+            this.btnXoaGV = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
-            this.button10 = new System.Windows.Forms.Button();
+            this.btnThemGV = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.txtDiaChi = new System.Windows.Forms.TextBox();
@@ -103,8 +103,8 @@
             this.dữLiệuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saoLưuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.phụcHồiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.importDanhSáchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.exportDanhSáchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ImportMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ExportMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.quảnLýDToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.DanhSachGiaoVienMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.DanhSachHocSinhMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -114,6 +114,17 @@
             this.maGVValidator1 = new QuanLyThiTracNghiem.Validate.MaGVValidator();
             this.tenTaiKhoanValidator1 = new QuanLyThiTracNghiem.Validate.TenTaiKhoanValidator();
             this.tenTaiKhoanValidator2 = new QuanLyThiTracNghiem.Validate.TenTaiKhoanValidator();
+            this.requiredValidator1 = new QuanLyThiTracNghiem.Validate.RequiredValidator();
+            this.requiredValidator2 = new QuanLyThiTracNghiem.Validate.RequiredValidator();
+            this.requiredValidator3 = new QuanLyThiTracNghiem.Validate.RequiredValidator();
+            this.requiredValidator4 = new QuanLyThiTracNghiem.Validate.RequiredValidator();
+            this.requiredValidator5 = new QuanLyThiTracNghiem.Validate.RequiredValidator();
+            this.requiredValidator6 = new QuanLyThiTracNghiem.Validate.RequiredValidator();
+            this.requiredValidator7 = new QuanLyThiTracNghiem.Validate.RequiredValidator();
+            this.requiredValidator8 = new QuanLyThiTracNghiem.Validate.RequiredValidator();
+            this.requiredValidator9 = new QuanLyThiTracNghiem.Validate.RequiredValidator();
+            this.requiredValidator10 = new QuanLyThiTracNghiem.Validate.RequiredValidator();
+            this.requiredValidator11 = new QuanLyThiTracNghiem.Validate.RequiredValidator();
             this.groupBox1.SuspendLayout();
             this.tcAdmin.SuspendLayout();
             this.tpQuanLyHocSinh.SuspendLayout();
@@ -261,7 +272,7 @@
             // 
             // dgvHocSinh
             // 
-            this.dgvHocSinh.AllowUserToDeleteRows = false;
+            this.dgvHocSinh.AllowUserToOrderColumns = true;
             this.dgvHocSinh.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvHocSinh.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvHocSinh.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -276,7 +287,6 @@
             this.dgvHocSinh.Location = new System.Drawing.Point(3, 20);
             this.dgvHocSinh.Margin = new System.Windows.Forms.Padding(2);
             this.dgvHocSinh.Name = "dgvHocSinh";
-            this.dgvHocSinh.ReadOnly = true;
             this.dgvHocSinh.RowHeadersVisible = false;
             this.dgvHocSinh.RowHeadersWidth = 51;
             this.dgvHocSinh.RowTemplate.Height = 24;
@@ -337,8 +347,8 @@
             // 
             this.groupBox2.Controls.Add(this.dtpNgaySinhHS);
             this.groupBox2.Controls.Add(this.btnSuaHS);
-            this.groupBox2.Controls.Add(this.btnXoa);
-            this.groupBox2.Controls.Add(this.btnThem);
+            this.groupBox2.Controls.Add(this.btnXoaHS);
+            this.groupBox2.Controls.Add(this.btnThemHS);
             this.groupBox2.Controls.Add(this.label14);
             this.groupBox2.Controls.Add(this.txtMatKhauHS);
             this.groupBox2.Controls.Add(this.label15);
@@ -380,25 +390,27 @@
             this.btnSuaHS.UseVisualStyleBackColor = true;
             this.btnSuaHS.Click += new System.EventHandler(this.btnSuaHS_Click);
             // 
-            // btnXoa
+            // btnXoaHS
             // 
-            this.btnXoa.Location = new System.Drawing.Point(229, 266);
-            this.btnXoa.Margin = new System.Windows.Forms.Padding(2);
-            this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(58, 46);
-            this.btnXoa.TabIndex = 66;
-            this.btnXoa.Text = "Xóa ";
-            this.btnXoa.UseVisualStyleBackColor = true;
+            this.btnXoaHS.Location = new System.Drawing.Point(229, 266);
+            this.btnXoaHS.Margin = new System.Windows.Forms.Padding(2);
+            this.btnXoaHS.Name = "btnXoaHS";
+            this.btnXoaHS.Size = new System.Drawing.Size(58, 46);
+            this.btnXoaHS.TabIndex = 66;
+            this.btnXoaHS.Text = "Xóa ";
+            this.btnXoaHS.UseVisualStyleBackColor = true;
+            this.btnXoaHS.Click += new System.EventHandler(this.btnXoaHS_Click);
             // 
-            // btnThem
+            // btnThemHS
             // 
-            this.btnThem.Location = new System.Drawing.Point(50, 266);
-            this.btnThem.Margin = new System.Windows.Forms.Padding(2);
-            this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(58, 46);
-            this.btnThem.TabIndex = 65;
-            this.btnThem.Text = "Thêm ";
-            this.btnThem.UseVisualStyleBackColor = true;
+            this.btnThemHS.Location = new System.Drawing.Point(50, 266);
+            this.btnThemHS.Margin = new System.Windows.Forms.Padding(2);
+            this.btnThemHS.Name = "btnThemHS";
+            this.btnThemHS.Size = new System.Drawing.Size(58, 46);
+            this.btnThemHS.TabIndex = 65;
+            this.btnThemHS.Text = "Thêm ";
+            this.btnThemHS.UseVisualStyleBackColor = true;
+            this.btnThemHS.Click += new System.EventHandler(this.btnThemHS_Click);
             // 
             // label14
             // 
@@ -696,9 +708,9 @@
             this.groupBox5.Controls.Add(this.label9);
             this.groupBox5.Controls.Add(this.btnSuaGV);
             this.groupBox5.Controls.Add(this.label10);
-            this.groupBox5.Controls.Add(this.button9);
+            this.groupBox5.Controls.Add(this.btnXoaGV);
             this.groupBox5.Controls.Add(this.label11);
-            this.groupBox5.Controls.Add(this.button10);
+            this.groupBox5.Controls.Add(this.btnThemGV);
             this.groupBox5.Controls.Add(this.label12);
             this.groupBox5.Controls.Add(this.label13);
             this.groupBox5.Controls.Add(this.txtDiaChi);
@@ -784,15 +796,16 @@
             this.label10.TabIndex = 5;
             this.label10.Text = "Họ tên :";
             // 
-            // button9
+            // btnXoaGV
             // 
-            this.button9.Location = new System.Drawing.Point(229, 247);
-            this.button9.Margin = new System.Windows.Forms.Padding(2);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(58, 46);
-            this.button9.TabIndex = 15;
-            this.button9.Text = "Xóa ";
-            this.button9.UseVisualStyleBackColor = true;
+            this.btnXoaGV.Location = new System.Drawing.Point(229, 247);
+            this.btnXoaGV.Margin = new System.Windows.Forms.Padding(2);
+            this.btnXoaGV.Name = "btnXoaGV";
+            this.btnXoaGV.Size = new System.Drawing.Size(58, 46);
+            this.btnXoaGV.TabIndex = 15;
+            this.btnXoaGV.Text = "Xóa ";
+            this.btnXoaGV.UseVisualStyleBackColor = true;
+            this.btnXoaGV.Click += new System.EventHandler(this.btnXoaGV_Click);
             // 
             // label11
             // 
@@ -805,15 +818,16 @@
             this.label11.TabIndex = 6;
             this.label11.Text = "Ngày Sinh :";
             // 
-            // button10
+            // btnThemGV
             // 
-            this.button10.Location = new System.Drawing.Point(50, 247);
-            this.button10.Margin = new System.Windows.Forms.Padding(2);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(58, 46);
-            this.button10.TabIndex = 14;
-            this.button10.Text = "Thêm ";
-            this.button10.UseVisualStyleBackColor = true;
+            this.btnThemGV.Location = new System.Drawing.Point(50, 247);
+            this.btnThemGV.Margin = new System.Windows.Forms.Padding(2);
+            this.btnThemGV.Name = "btnThemGV";
+            this.btnThemGV.Size = new System.Drawing.Size(58, 46);
+            this.btnThemGV.TabIndex = 14;
+            this.btnThemGV.Text = "Thêm ";
+            this.btnThemGV.UseVisualStyleBackColor = true;
+            this.btnThemGV.Click += new System.EventHandler(this.btnThemGV_Click);
             // 
             // label12
             // 
@@ -927,8 +941,8 @@
             this.dữLiệuToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.saoLưuToolStripMenuItem,
             this.phụcHồiToolStripMenuItem,
-            this.importDanhSáchToolStripMenuItem,
-            this.exportDanhSáchToolStripMenuItem});
+            this.ImportMenuItem,
+            this.ExportMenuItem});
             this.dữLiệuToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.dữLiệuToolStripMenuItem.Name = "dữLiệuToolStripMenuItem";
             this.dữLiệuToolStripMenuItem.Size = new System.Drawing.Size(69, 24);
@@ -946,17 +960,19 @@
             this.phụcHồiToolStripMenuItem.Size = new System.Drawing.Size(193, 24);
             this.phụcHồiToolStripMenuItem.Text = "Phục hồi";
             // 
-            // importDanhSáchToolStripMenuItem
+            // ImportMenuItem
             // 
-            this.importDanhSáchToolStripMenuItem.Name = "importDanhSáchToolStripMenuItem";
-            this.importDanhSáchToolStripMenuItem.Size = new System.Drawing.Size(193, 24);
-            this.importDanhSáchToolStripMenuItem.Text = "Import danh sách";
+            this.ImportMenuItem.Name = "ImportMenuItem";
+            this.ImportMenuItem.Size = new System.Drawing.Size(193, 24);
+            this.ImportMenuItem.Text = "Import danh sách";
+            this.ImportMenuItem.Click += new System.EventHandler(this.ImportMenuItem_Click);
             // 
-            // exportDanhSáchToolStripMenuItem
+            // ExportMenuItem
             // 
-            this.exportDanhSáchToolStripMenuItem.Name = "exportDanhSáchToolStripMenuItem";
-            this.exportDanhSáchToolStripMenuItem.Size = new System.Drawing.Size(193, 24);
-            this.exportDanhSáchToolStripMenuItem.Text = "Export danh sách";
+            this.ExportMenuItem.Name = "ExportMenuItem";
+            this.ExportMenuItem.Size = new System.Drawing.Size(193, 24);
+            this.ExportMenuItem.Text = "Export danh sách";
+            this.ExportMenuItem.Click += new System.EventHandler(this.ExportMenuItem_Click);
             // 
             // quảnLýDToolStripMenuItem
             // 
@@ -1020,6 +1036,72 @@
             this.tenTaiKhoanValidator2.ControlToValidate = this.txtTenTaiKhoan;
             this.tenTaiKhoanValidator2.ErrorIcon = ((System.Drawing.Icon)(resources.GetObject("tenTaiKhoanValidator2.ErrorIcon")));
             this.tenTaiKhoanValidator2.ErrorMessage = "Tên tài khoản đã tồn tại";
+            // 
+            // requiredValidator1
+            // 
+            this.requiredValidator1.ControlToValidate = this.txtMaHS;
+            this.requiredValidator1.ErrorIcon = ((System.Drawing.Icon)(resources.GetObject("requiredValidator1.ErrorIcon")));
+            this.requiredValidator1.ErrorMessage = "Không được để rỗng";
+            // 
+            // requiredValidator2
+            // 
+            this.requiredValidator2.ControlToValidate = this.txtHoTenHS;
+            this.requiredValidator2.ErrorIcon = ((System.Drawing.Icon)(resources.GetObject("requiredValidator2.ErrorIcon")));
+            this.requiredValidator2.ErrorMessage = "Không được để rỗng";
+            // 
+            // requiredValidator3
+            // 
+            this.requiredValidator3.ControlToValidate = this.txtLop;
+            this.requiredValidator3.ErrorIcon = ((System.Drawing.Icon)(resources.GetObject("requiredValidator3.ErrorIcon")));
+            this.requiredValidator3.ErrorMessage = "Không được để rỗng";
+            // 
+            // requiredValidator4
+            // 
+            this.requiredValidator4.ControlToValidate = this.txtDiaChiHS;
+            this.requiredValidator4.ErrorIcon = ((System.Drawing.Icon)(resources.GetObject("requiredValidator4.ErrorIcon")));
+            this.requiredValidator4.ErrorMessage = "Không được để rỗng";
+            // 
+            // requiredValidator5
+            // 
+            this.requiredValidator5.ControlToValidate = this.txtTenTaiKhoanHS;
+            this.requiredValidator5.ErrorIcon = ((System.Drawing.Icon)(resources.GetObject("requiredValidator5.ErrorIcon")));
+            this.requiredValidator5.ErrorMessage = "Không được để rỗng";
+            // 
+            // requiredValidator6
+            // 
+            this.requiredValidator6.ControlToValidate = this.txtMatKhauHS;
+            this.requiredValidator6.ErrorIcon = ((System.Drawing.Icon)(resources.GetObject("requiredValidator6.ErrorIcon")));
+            this.requiredValidator6.ErrorMessage = "Không được để rỗng";
+            // 
+            // requiredValidator7
+            // 
+            this.requiredValidator7.ControlToValidate = this.txtMaGV;
+            this.requiredValidator7.ErrorIcon = ((System.Drawing.Icon)(resources.GetObject("requiredValidator7.ErrorIcon")));
+            this.requiredValidator7.ErrorMessage = "Không được để rỗng";
+            // 
+            // requiredValidator8
+            // 
+            this.requiredValidator8.ControlToValidate = this.txtHoTen;
+            this.requiredValidator8.ErrorIcon = ((System.Drawing.Icon)(resources.GetObject("requiredValidator8.ErrorIcon")));
+            this.requiredValidator8.ErrorMessage = "Không được để rỗng";
+            // 
+            // requiredValidator9
+            // 
+            this.requiredValidator9.ControlToValidate = this.txtDiaChi;
+            this.requiredValidator9.ErrorIcon = ((System.Drawing.Icon)(resources.GetObject("requiredValidator9.ErrorIcon")));
+            this.requiredValidator9.ErrorMessage = "Không được để rỗng";
+            // 
+            // requiredValidator10
+            // 
+            this.requiredValidator10.ControlToValidate = this.txtTenTaiKhoan;
+            this.requiredValidator10.ErrorIcon = ((System.Drawing.Icon)(resources.GetObject("requiredValidator10.ErrorIcon")));
+            this.requiredValidator10.ErrorMessage = "Không được để rỗng";
+            // 
+            // requiredValidator11
+            // 
+            this.requiredValidator11.ControlToValidate = this.txtMatKhau;
+            this.requiredValidator11.ErrorIcon = ((System.Drawing.Icon)(resources.GetObject("requiredValidator11.ErrorIcon")));
+            this.requiredValidator11.ErrorMessage = "Không được để rỗng";
             // 
             // frmAdmin
             // 
@@ -1097,8 +1179,8 @@
         private System.Windows.Forms.ToolStripMenuItem dữLiệuToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem saoLưuToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem phụcHồiToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem importDanhSáchToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem exportDanhSáchToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ImportMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ExportMenuItem;
         private System.Windows.Forms.ToolStripMenuItem quảnLýDToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem DanhSachGiaoVienMenuItem;
         private System.Windows.Forms.ToolStripMenuItem DanhSachHocSinhMenuItem;
@@ -1121,9 +1203,9 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button btnSuaGV;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.Button btnXoaGV;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.Button btnThemGV;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox txtDiaChi;
@@ -1143,8 +1225,8 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.TextBox txtTenTaiKhoanHS;
         private System.Windows.Forms.Button btnSuaHS;
-        private System.Windows.Forms.Button btnXoa;
-        private System.Windows.Forms.Button btnThem;
+        private System.Windows.Forms.Button btnXoaHS;
+        private System.Windows.Forms.Button btnThemHS;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaHS;
         private System.Windows.Forms.DataGridViewTextBoxColumn HoTenHS;
         private System.Windows.Forms.DataGridViewTextBoxColumn Lop;
@@ -1157,5 +1239,16 @@
         private Validate.MaGVValidator maGVValidator1;
         private Validate.TenTaiKhoanValidator tenTaiKhoanValidator1;
         private Validate.TenTaiKhoanValidator tenTaiKhoanValidator2;
+        private Validate.RequiredValidator requiredValidator1;
+        private Validate.RequiredValidator requiredValidator2;
+        private Validate.RequiredValidator requiredValidator3;
+        private Validate.RequiredValidator requiredValidator4;
+        private Validate.RequiredValidator requiredValidator5;
+        private Validate.RequiredValidator requiredValidator6;
+        private Validate.RequiredValidator requiredValidator7;
+        private Validate.RequiredValidator requiredValidator8;
+        private Validate.RequiredValidator requiredValidator9;
+        private Validate.RequiredValidator requiredValidator10;
+        private Validate.RequiredValidator requiredValidator11;
     }
 }

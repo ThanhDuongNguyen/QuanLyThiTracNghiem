@@ -56,21 +56,21 @@
         <elementListCompartment Id="3ec5982c-02b8-4613-a4d2-b1d522b96502" absoluteBounds="3.265, 3.335, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(4.25 : 2.875); (4.25 : 1.9999995); (5.5 : 1.9999995)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(4.25 : 2.875); (4.25 : 1.9999995); (5.5 : 1.9999995)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/QuanLyThiDataContext/NguoiDung/NguoiDung_GiaoVien" />
       <nodes>
         <classShapeMoniker Id="7d75cf25-a6fd-40b7-84a4-79d18ee85ea0" />
         <classShapeMoniker Id="b98f709f-7608-4456-95a3-106d2d90b2f8" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(4.2499995 : 4.45359537760417); (4.2499995 : 5.73159912109375); (5.25 : 5.73159912109375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(4.2499995 : 4.45359537760417); (4.2499995 : 5.73159912109375); (5.25 : 5.73159912109375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/QuanLyThiDataContext/NguoiDung/NguoiDung_HocSinh" />
       <nodes>
         <classShapeMoniker Id="7d75cf25-a6fd-40b7-84a4-79d18ee85ea0" />
         <classShapeMoniker Id="828c159c-83d8-4402-a2a9-7b0bb04bb373" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.5 : 3.72199625651042); (3.25 : 3.72199625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(2.5 : 3.72199625651042); (3.25 : 3.72199625651042)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/QuanLyThiDataContext/Quyen/Quyen_NguoiDung" />
       <nodes>
         <classShapeMoniker Id="7cdcf1a6-a463-4d5e-9e6b-de59263f56c1" />
