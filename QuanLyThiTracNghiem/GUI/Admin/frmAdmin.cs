@@ -1,5 +1,6 @@
 ﻿using QuanLyThiTracNghiem.Data;
 using QuanLyThiTracNghiem.Repository;
+using QuanLyThiTracNghiem.Validate;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -25,6 +26,9 @@ namespace QuanLyThiTracNghiem
 
         private BindingManagerBase _bindingManagerGV;
         private BindingManagerBase _bindingManagerHS;
+
+        private string oldMaHS;
+        private string oldMaGV;
         public frmAdmin()
         {
             InitializeComponent();
@@ -34,6 +38,19 @@ namespace QuanLyThiTracNghiem
 
             dgvGiaoVien.CellFormatting += DgvGiaoVien_CellFormatting;
             dgvHocSinh.CellFormatting += DgvHocSinh_CellFormatting;
+
+            dgvGiaoVien.SelectionChanged += DgvGiaoVien_SelectionChanged;
+            dgvHocSinh.SelectionChanged += DgvHocSinh_SelectionChanged;
+        }
+
+        private void DgvHocSinh_SelectionChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void DgvGiaoVien_SelectionChanged(object sender, EventArgs e)
+        {
+            
         }
 
         //Che mật khẩu 
@@ -84,6 +101,14 @@ namespace QuanLyThiTracNghiem
                 giaovien.NguoiDung.MatKhauHash
             });
             dgvGiaoVien.DataSource = bindingGV;
+
+            txtHoTen.DataBindings.Clear();
+            txtMaGV.DataBindings.Clear();
+            dtpNgaySinh.DataBindings.Clear();
+            txtDiaChi.DataBindings.Clear();
+            txtLop.DataBindings.Clear();
+            txtTenTaiKhoan.DataBindings.Clear();
+            txtMatKhau.DataBindings.Clear();
 
             txtHoTen.DataBindings.Add("Text", bindingGV, "HoTen");
             txtMaGV.DataBindings.Add("Text", bindingGV, "MaGV");
@@ -196,7 +221,8 @@ namespace QuanLyThiTracNghiem
 
         private void btnSuaHS_Click(object sender, EventArgs e)
         {
-            HocSinh hs = _hocSinhRepository.FindByCondition(p => p.MaHS.Equals(txtMaHS.Text)).Single();
+            string oldHS = dgvHocSinh.SelectedRows[0].Cells["MaHS"].Value.ToString();
+            HocSinh hs = _hocSinhRepository.FindByCondition(p => p.MaHS.Equals(oldHS)).Single();
             hs.MaHS = txtMaHS.Text;
             hs.Lop = txtLop.Text;
             hs.HoTen = txtHoTenHS.Text;
@@ -207,6 +233,21 @@ namespace QuanLyThiTracNghiem
 
             _hocSinhRepository.Update();
             LoadHocSinh();
+        }
+
+        private void btnSuaGV_Click(object sender, EventArgs e)
+        {
+            string oldGV = dgvGiaoVien.SelectedRows[0].Cells["MaGV"].Value.ToString();
+            GiaoVien gv = _giaoVienRepository.FindByCondition(p => p.MaGV.Equals(oldGV)).Single();
+            gv.MaGV = txtMaGV.Text;
+            gv.HoTen = txtHoTen.Text;
+            gv.DiaChi = txtDiaChi.Text;
+            gv.NgaySinh = dtpNgaySinh.Value;
+            gv.NguoiDung.TenTaiKhoan = txtTenTaiKhoan.Text;
+            gv.NguoiDung.MatKhauHash = txtMatKhau.Text;
+
+            _giaoVienRepository.Update();
+            LoadGiaoVien();
         }
     }
 }
