@@ -108,6 +108,12 @@
     <Compile Include="fromChangePsW.Designer.cs">
       <DependentUpon>fromChangePsW.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Admin\frmBackup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Admin\frmBackup.Designer.cs">
+      <DependentUpon>frmBackup.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\GiaoVien\frmGiaoVien.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -201,6 +207,9 @@
     <EmbeddedResource Include="fromChangePsW.resx">
       <DependentUpon>fromChangePsW.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Admin\frmBackup.resx">
+      <DependentUpon>frmBackup.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\GiaoVien\frmGiaoVien.resx">
       <DependentUpon>frmGiaoVien.cs</DependentUpon>
     </EmbeddedResource>
@@ -260,6 +269,9 @@
     </PackageReference>
     <PackageReference Include="ExcelDataReader.DataSet">
       <Version>3.6.0</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.SqlServer.SqlManagementObjects">
+      <Version>161.46041.41</Version>
     </PackageReference>
   </ItemGroup>
   <ItemGroup>

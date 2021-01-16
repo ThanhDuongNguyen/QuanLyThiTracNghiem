@@ -6,6 +6,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using QuanLyThiTracNghiem.Utils;
+using QuanLyThiTracNghiem.GUI.Admin;
+
 namespace QuanLyThiTracNghiem
 {
     static class Program
@@ -23,7 +25,7 @@ namespace QuanLyThiTracNghiem
             string connectionString = ConfigurationManager.ConnectionStrings["QuanLyThiTracNghiem.Properties.Settings.QLThiConnectionString"].ConnectionString;
             if (Utils.Utils.KiemTraKetNoiTonTai(connectionString))
             {
-                Application.Run(new frmAdmin());
+                Application.Run(new frmBackup());
             }
             else
             {
