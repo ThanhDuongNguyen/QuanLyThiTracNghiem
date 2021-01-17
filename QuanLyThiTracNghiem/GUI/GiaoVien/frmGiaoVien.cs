@@ -1016,6 +1016,18 @@ namespace QuanLyThiTracNghiem
 
             ReLoad();
         }
+
+        private void DangXuat_Click(object sender, EventArgs e)
+        {
+            Application.Restart();
+        }
+
+        private void Thoat_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        
     }
 
     //Quan ly de thi

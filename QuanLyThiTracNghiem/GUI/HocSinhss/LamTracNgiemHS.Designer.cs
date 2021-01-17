@@ -33,7 +33,6 @@
             this.groupBox8 = new System.Windows.Forms.GroupBox();
             this.label14 = new System.Windows.Forms.Label();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.label13 = new System.Windows.Forms.Label();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -57,6 +56,7 @@
             this.lblCauHoi = new System.Windows.Forms.Label();
             this.lblGoiY = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.lblTime = new System.Windows.Forms.Label();
             this.groupBox7.SuspendLayout();
             this.groupBox8.SuspendLayout();
             this.groupBox6.SuspendLayout();
@@ -119,7 +119,7 @@
             // groupBox6
             // 
             this.groupBox6.BackColor = System.Drawing.Color.Gainsboro;
-            this.groupBox6.Controls.Add(this.label13);
+            this.groupBox6.Controls.Add(this.lblTime);
             this.groupBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox6.Location = new System.Drawing.Point(920, 15);
             this.groupBox6.Name = "groupBox6";
@@ -127,15 +127,6 @@
             this.groupBox6.TabIndex = 13;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Thời gian còn lại";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(16, 93);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(160, 18);
-            this.label13.TabIndex = 10;
-            this.label13.Text = "Số câu đã hoàn thành :";
             // 
             // groupBox5
             // 
@@ -361,6 +352,16 @@
             this.label2.TabIndex = 19;
             this.label2.Text = "Gợi ý";
             // 
+            // lblTime
+            // 
+            this.lblTime.AutoSize = true;
+            this.lblTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTime.Location = new System.Drawing.Point(94, 54);
+            this.lblTime.Name = "lblTime";
+            this.lblTime.Size = new System.Drawing.Size(86, 31);
+            this.lblTime.TabIndex = 11;
+            this.lblTime.Text = "label1";
+            // 
             // LamTracNgiemHS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
@@ -393,7 +394,6 @@
         private System.Windows.Forms.GroupBox groupBox8;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.GroupBox groupBox6;
-        private System.Windows.Forms.Label label13;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
@@ -417,5 +417,6 @@
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblGoiY;
+        private System.Windows.Forms.Label lblTime;
     }
 }

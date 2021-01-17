@@ -73,6 +73,7 @@
             // 
             this.txtMatKhau.Location = new System.Drawing.Point(269, 148);
             this.txtMatKhau.Name = "txtMatKhau";
+            this.txtMatKhau.PasswordChar = '*';
             this.txtMatKhau.Size = new System.Drawing.Size(229, 20);
             this.txtMatKhau.TabIndex = 2;
             // 

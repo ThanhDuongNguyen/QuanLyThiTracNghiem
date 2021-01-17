@@ -231,6 +231,7 @@
             this.capHocDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.capDoDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cauHoiBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.btnXuatKetQuaKT = new System.Windows.Forms.Button();
             cauHoiDeBaiLabel = new System.Windows.Forms.Label();
             capHocLabel = new System.Windows.Forms.Label();
             capDoLabel = new System.Windows.Forms.Label();
@@ -1773,15 +1774,17 @@
             // 
             this.DangXuat.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.DangXuat.Name = "DangXuat";
-            this.DangXuat.Size = new System.Drawing.Size(146, 24);
+            this.DangXuat.Size = new System.Drawing.Size(180, 24);
             this.DangXuat.Text = "Đăng xuất";
+            this.DangXuat.Click += new System.EventHandler(this.DangXuat_Click);
             // 
             // Thoat
             // 
             this.Thoat.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.Thoat.Name = "Thoat";
-            this.Thoat.Size = new System.Drawing.Size(146, 24);
+            this.Thoat.Size = new System.Drawing.Size(180, 24);
             this.Thoat.Text = "Thoát";
+            this.Thoat.Click += new System.EventHandler(this.Thoat_Click);
             // 
             // quảnLýDToolStripMenuItem
             // 
@@ -2551,5 +2554,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ngaySinhDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn diaChiDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource hocSinhBindingSource;
+        
     }
 }

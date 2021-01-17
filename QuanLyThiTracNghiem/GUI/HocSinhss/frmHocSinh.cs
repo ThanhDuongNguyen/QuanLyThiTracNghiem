@@ -50,5 +50,12 @@ namespace QuanLyThiTracNghiem
             LuaChonKiThi luaChonKiThi = new LuaChonKiThi(hocSinh);
             luaChonKiThi.ShowDialog();
         }
+
+        private void luyệnThiThửToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            HocSinh hocSinh = _hocSinhRepository.FindByCondition(p => p.NguoiDungID.Equals(_nguoiDung.IDNguoiDung)).SingleOrDefault();
+            LuaChonKiThi luaChonKiThi = new LuaChonKiThi(hocSinh);
+            luaChonKiThi.ShowDialog();
+        }
     }
 }

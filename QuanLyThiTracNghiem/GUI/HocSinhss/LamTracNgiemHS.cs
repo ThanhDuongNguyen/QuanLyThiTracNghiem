@@ -24,7 +24,7 @@ namespace QuanLyThiTracNghiem.GUI.HocSinhss
             this.deThi = deThi;
             this.hocsinh = hs;
 
-
+            time = int.Parse(deThi.ThoiGian.ToString()) *60;
             LoadThongTin();
             LoadCheckList();
             checklist.SelectedIndexChanged += Checklist_SelectedIndexChanged;
@@ -34,6 +34,35 @@ namespace QuanLyThiTracNghiem.GUI.HocSinhss
             checkBox4.CheckedChanged += CheckBox1_CheckedChanged;
             checkBox5.CheckedChanged += CheckBox1_CheckedChanged;
             checkBox6.CheckedChanged += CheckBox1_CheckedChanged;
+            Runtimecount();
+        }
+        private System.Windows.Forms.Timer aTimer;
+        private int time;
+        private void Runtimecount()
+        {
+            aTimer = new System.Windows.Forms.Timer();
+
+            aTimer.Tick += new EventHandler(aTimer_Tick);
+
+            aTimer.Interval = 1000; // 1 second
+
+            aTimer.Start();
+
+            lblTime.Text = time.ToString();
+        }
+
+        private void aTimer_Tick(object sender, EventArgs e)
+        {
+            time--;
+
+            if (time == 0)
+            {
+                aTimer.Stop();
+                btnNop_Click(sender, e);
+            }
+                
+
+            lblTime.Text = time.ToString();
         }
 
         private void CheckBox1_CheckedChanged(object sender, EventArgs e)
@@ -320,6 +349,8 @@ namespace QuanLyThiTracNghiem.GUI.HocSinhss
 
             MessageBox.Show($"Số câu đúng : {socaudung}/{total}\n" +
                 $"Số điểm : {diem}");
+
+            this.Close();
         }
 
         private bool kiemtradapan(List<CauTraLoi> dapan, List<DapAn> dapandung)
