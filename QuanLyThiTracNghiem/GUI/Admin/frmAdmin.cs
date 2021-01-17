@@ -1,6 +1,7 @@
 ﻿using ClosedXML.Excel;
 using ExcelDataReader;
 using QuanLyThiTracNghiem.Data;
+using QuanLyThiTracNghiem.GUI.Admin;
 using QuanLyThiTracNghiem.Repository;
 using QuanLyThiTracNghiem.Validate;
 using System;
@@ -63,7 +64,8 @@ namespace QuanLyThiTracNghiem
         // Tải lại
         private void ReLoad()
         {
-
+            if (tcAdmin.SelectedTab == null)
+                return;
             if (tcAdmin.SelectedTab.Tag.Equals(QuanLyTabPage.QuanLyGiaoVien.ToString()))
             {
                 LoadGiaoVien();
@@ -534,6 +536,18 @@ namespace QuanLyThiTracNghiem
         private void Thoat_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void saoLưuToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmBackup frmBackup = new frmBackup();
+            frmBackup.ShowDialog();
+        }
+
+        private void phụcHồiToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmBackup frmBackup = new frmBackup();
+            frmBackup.ShowDialog();
         }
     }
 

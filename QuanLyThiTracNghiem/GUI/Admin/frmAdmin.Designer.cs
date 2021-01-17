@@ -913,7 +913,7 @@
             // 
             this.DangXuat.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.DangXuat.Name = "DangXuat";
-            this.DangXuat.Size = new System.Drawing.Size(180, 24);
+            this.DangXuat.Size = new System.Drawing.Size(146, 24);
             this.DangXuat.Text = "Đăng xuất";
             this.DangXuat.Click += new System.EventHandler(this.DangXuat_Click);
             // 
@@ -921,7 +921,7 @@
             // 
             this.Thoat.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.Thoat.Name = "Thoat";
-            this.Thoat.Size = new System.Drawing.Size(180, 24);
+            this.Thoat.Size = new System.Drawing.Size(146, 24);
             this.Thoat.Text = "Thoát";
             this.Thoat.Click += new System.EventHandler(this.Thoat_Click);
             // 
@@ -942,12 +942,14 @@
             this.saoLưuToolStripMenuItem.Name = "saoLưuToolStripMenuItem";
             this.saoLưuToolStripMenuItem.Size = new System.Drawing.Size(193, 24);
             this.saoLưuToolStripMenuItem.Text = "Sao lưu";
+            this.saoLưuToolStripMenuItem.Click += new System.EventHandler(this.saoLưuToolStripMenuItem_Click);
             // 
             // phụcHồiToolStripMenuItem
             // 
             this.phụcHồiToolStripMenuItem.Name = "phụcHồiToolStripMenuItem";
             this.phụcHồiToolStripMenuItem.Size = new System.Drawing.Size(193, 24);
             this.phụcHồiToolStripMenuItem.Text = "Phục hồi";
+            this.phụcHồiToolStripMenuItem.Click += new System.EventHandler(this.phụcHồiToolStripMenuItem_Click);
             // 
             // ImportMenuItem
             // 
