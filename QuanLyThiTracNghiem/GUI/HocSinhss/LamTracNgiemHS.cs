@@ -24,6 +24,7 @@ namespace QuanLyThiTracNghiem.GUI.HocSinhss
             this.deThi = deThi;
             this.hocsinh = hs;
 
+            
             LoadThongTin();
             LoadCheckList();
             checklist.SelectedIndexChanged += Checklist_SelectedIndexChanged;
@@ -104,7 +105,7 @@ namespace QuanLyThiTracNghiem.GUI.HocSinhss
                 checkListBoxItem.Text = "Câu: " + i.ToString();
                 CauHoi cauHoi = quanLyThiDataContext.CauHois.Where(p => p.IDCauHoi.Equals(item.IDCauHoi)).Single();
                 checkListBoxItem.CauHoi = cauHoi.CauHoiDeBai;
-
+                checkListBoxItem.GoiY = cauHoi.GoiY;
                 List<DapAn> dapAns = quanLyThiDataContext.DapAns.Where(p => p.IDCauHoi.Equals(cauHoi.IDCauHoi)).ToList();
                 foreach (DapAn da in dapAns)
                 {
@@ -156,6 +157,7 @@ namespace QuanLyThiTracNghiem.GUI.HocSinhss
             checkBox6.Checked = false;
 
             CheckListBoxItem cl = checklist.SelectedItem as CheckListBoxItem;
+            lblGoiY.Text = cl.GoiY;
             lblCauHoi.Text = cl.CauHoi;
             checkBox1.Text = cl.CauTL1;
             checkBox1.Checked = cl.IsDung1;

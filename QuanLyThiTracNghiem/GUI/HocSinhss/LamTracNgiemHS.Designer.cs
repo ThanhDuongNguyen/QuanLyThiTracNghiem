@@ -55,6 +55,8 @@
             this.checkBox5 = new System.Windows.Forms.CheckBox();
             this.checkBox6 = new System.Windows.Forms.CheckBox();
             this.lblCauHoi = new System.Windows.Forms.Label();
+            this.lblGoiY = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.groupBox7.SuspendLayout();
             this.groupBox8.SuspendLayout();
             this.groupBox6.SuspendLayout();
@@ -87,6 +89,8 @@
             // groupBox8
             // 
             this.groupBox8.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.groupBox8.Controls.Add(this.label2);
+            this.groupBox8.Controls.Add(this.lblGoiY);
             this.groupBox8.Controls.Add(this.lblCauHoi);
             this.groupBox8.Controls.Add(this.checkBox4);
             this.groupBox8.Controls.Add(this.checkBox5);
@@ -285,7 +289,7 @@
             // checkBox2
             // 
             this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(34, 158);
+            this.checkBox2.Location = new System.Drawing.Point(34, 140);
             this.checkBox2.Name = "checkBox2";
             this.checkBox2.Size = new System.Drawing.Size(15, 14);
             this.checkBox2.TabIndex = 12;
@@ -295,7 +299,7 @@
             // checkBox3
             // 
             this.checkBox3.AutoSize = true;
-            this.checkBox3.Location = new System.Drawing.Point(34, 215);
+            this.checkBox3.Location = new System.Drawing.Point(34, 180);
             this.checkBox3.Name = "checkBox3";
             this.checkBox3.Size = new System.Drawing.Size(15, 14);
             this.checkBox3.TabIndex = 13;
@@ -305,7 +309,7 @@
             // checkBox4
             // 
             this.checkBox4.AutoSize = true;
-            this.checkBox4.Location = new System.Drawing.Point(34, 268);
+            this.checkBox4.Location = new System.Drawing.Point(34, 220);
             this.checkBox4.Name = "checkBox4";
             this.checkBox4.Size = new System.Drawing.Size(15, 14);
             this.checkBox4.TabIndex = 16;
@@ -315,7 +319,7 @@
             // checkBox5
             // 
             this.checkBox5.AutoSize = true;
-            this.checkBox5.Location = new System.Drawing.Point(34, 322);
+            this.checkBox5.Location = new System.Drawing.Point(34, 259);
             this.checkBox5.Name = "checkBox5";
             this.checkBox5.Size = new System.Drawing.Size(15, 14);
             this.checkBox5.TabIndex = 15;
@@ -325,7 +329,7 @@
             // checkBox6
             // 
             this.checkBox6.AutoSize = true;
-            this.checkBox6.Location = new System.Drawing.Point(34, 381);
+            this.checkBox6.Location = new System.Drawing.Point(34, 299);
             this.checkBox6.Name = "checkBox6";
             this.checkBox6.Size = new System.Drawing.Size(15, 14);
             this.checkBox6.TabIndex = 14;
@@ -339,6 +343,23 @@
             this.lblCauHoi.Name = "lblCauHoi";
             this.lblCauHoi.Size = new System.Drawing.Size(0, 18);
             this.lblCauHoi.TabIndex = 17;
+            // 
+            // lblGoiY
+            // 
+            this.lblGoiY.AutoSize = true;
+            this.lblGoiY.Location = new System.Drawing.Point(83, 378);
+            this.lblGoiY.Name = "lblGoiY";
+            this.lblGoiY.Size = new System.Drawing.Size(0, 18);
+            this.lblGoiY.TabIndex = 18;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(34, 378);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(43, 18);
+            this.label2.TabIndex = 19;
+            this.label2.Text = "Gợi ý";
             // 
             // LamTracNgiemHS
             // 
@@ -394,5 +415,7 @@
         private System.Windows.Forms.CheckBox checkBox3;
         private System.Windows.Forms.CheckBox checkBox2;
         private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblGoiY;
     }
 }

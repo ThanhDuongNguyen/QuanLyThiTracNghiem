@@ -10,6 +10,7 @@ namespace QuanLyThiTracNghiem.Utils
     {
         public string Tag;
         public string Text;
+        public string GoiY;
         public string CauHoi;
         public string CauTL1;
         public string CauTL2;

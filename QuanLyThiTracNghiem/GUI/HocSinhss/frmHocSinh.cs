@@ -20,6 +20,8 @@ namespace QuanLyThiTracNghiem
         public frmHocSinh(NguoiDung nguoiDung)
         {
             InitializeComponent();
+
+            tcHocSinh.TabPages.Clear();
             _hocSinhRepository = new HocSinhRepository();
             _nguoiDung = nguoiDung;
             LoadThongTinHocSinh();
