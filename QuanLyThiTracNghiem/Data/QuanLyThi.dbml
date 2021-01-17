@@ -5,7 +5,7 @@
       <Column Name="MaNguoiDung" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="MaKT" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="MaDT" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="DiemThi" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DiemThi" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
       <Association Name="DeThi_BaiLamH" Member="DeThi" ThisKey="MaDT" OtherKey="MaDeThi" Type="DeThi" IsForeignKey="true" />
       <Association Name="KyThi_BaiLamH" Member="KyThi" ThisKey="MaKT" OtherKey="MaKT" Type="KyThi" IsForeignKey="true" />
       <Association Name="NguoiDung_BaiLamH" Member="NguoiDung" ThisKey="MaNguoiDung" OtherKey="IDNguoiDung" Type="NguoiDung" IsForeignKey="true" />

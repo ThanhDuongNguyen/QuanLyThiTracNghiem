@@ -262,7 +262,7 @@ namespace QuanLyThiTracNghiem.Data
 		
 		private string _MaDT;
 		
-		private System.Nullable<int> _DiemThi;
+		private string _DiemThi;
 		
 		private EntityRef<DeThi> _DeThi;
 		
@@ -280,7 +280,7 @@ namespace QuanLyThiTracNghiem.Data
     partial void OnMaKTChanged();
     partial void OnMaDTChanging(string value);
     partial void OnMaDTChanged();
-    partial void OnDiemThiChanging(System.Nullable<int> value);
+    partial void OnDiemThiChanging(string value);
     partial void OnDiemThiChanged();
     #endregion
 		
@@ -364,8 +364,8 @@ namespace QuanLyThiTracNghiem.Data
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DiemThi", DbType="Int")]
-		public System.Nullable<int> DiemThi
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DiemThi", DbType="VarChar(10)")]
+		public string DiemThi
 		{
 			get
 			{

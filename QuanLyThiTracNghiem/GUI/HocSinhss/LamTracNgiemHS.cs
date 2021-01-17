@@ -24,7 +24,7 @@ namespace QuanLyThiTracNghiem.GUI.HocSinhss
             this.deThi = deThi;
             this.hocsinh = hs;
 
-            
+
             LoadThongTin();
             LoadCheckList();
             checklist.SelectedIndexChanged += Checklist_SelectedIndexChanged;
@@ -173,9 +173,52 @@ namespace QuanLyThiTracNghiem.GUI.HocSinhss
             checkBox6.Checked = cl.IsDung6;
         }
 
-        private void LoadCauHoi()
+        private int Socaudung()
         {
 
+            int soCauDung = 0;
+
+            List<DeThi_CauHoi> deThi_CauHois = quanLyThiDataContext.DeThi_CauHois.Where(p => p.MaDT.Equals(deThi.MaDeThi)).ToList();
+            foreach (var i in deThi_CauHois)
+            {
+                List<DapAn> dapAns = quanLyThiDataContext.DapAns.Where(p => p.IDCauHoi.Equals(i.IDCauHoi) && p.IsDung == true).ToList();
+                List<CauTraLoi> cauTraLois = quanLyThiDataContext.CauTraLois.Where(p =>
+            p.NguoiDungID.Equals(hocsinh.NguoiDungID)
+            && p.MaDeThi.Equals(deThi.MaDeThi)
+            && p.MaKyThi.Equals(_kythi.MaKT)
+            && p.CauHoiID.Equals(i.IDCauHoi)).ToList();
+                if (cauTraLois.Count == 0)
+                    continue;
+                if(kiemtradapan(cauTraLois, dapAns))
+                {
+                    soCauDung++;
+                }
+            }
+            return soCauDung;
+        }
+
+        private float tinhdiem()
+        {
+            int soCauDung = 0;
+
+            List<DeThi_CauHoi> deThi_CauHois = quanLyThiDataContext.DeThi_CauHois.Where(p => p.MaDT.Equals(deThi.MaDeThi)).ToList();
+            foreach (var i in deThi_CauHois)
+            {
+                List<DapAn> dapAns = quanLyThiDataContext.DapAns.Where(p => p.IDCauHoi.Equals(i.IDCauHoi) && p.IsDung == true).ToList();
+                List<CauTraLoi> cauTraLois = quanLyThiDataContext.CauTraLois.Where(p =>
+            p.NguoiDungID.Equals(hocsinh.NguoiDungID)
+            && p.MaDeThi.Equals(deThi.MaDeThi)
+            && p.MaKyThi.Equals(_kythi.MaKT)
+            && p.CauHoiID.Equals(i.IDCauHoi)).ToList();
+                if (cauTraLois.Count == 0)
+                    continue;
+                if (kiemtradapan(cauTraLois, dapAns))
+                {
+                    soCauDung++;
+                }
+            }
+            int count = deThi_CauHois.Count;
+            return (10/count)*soCauDung;
         }
 
         private void btnNop_Click(object sender, EventArgs e)
@@ -195,7 +238,7 @@ namespace QuanLyThiTracNghiem.GUI.HocSinhss
                     });
                     quanLyThiDataContext.SubmitChanges();
                 }
-                    
+
                 if (cl.IsDung2)
                 {
                     quanLyThiDataContext.CauTraLois.InsertOnSubmit(new CauTraLoi
@@ -208,7 +251,7 @@ namespace QuanLyThiTracNghiem.GUI.HocSinhss
                     });
                     quanLyThiDataContext.SubmitChanges();
                 }
-                    
+
                 if (cl.IsDung3)
                 {
                     quanLyThiDataContext.CauTraLois.InsertOnSubmit(new CauTraLoi
@@ -221,7 +264,7 @@ namespace QuanLyThiTracNghiem.GUI.HocSinhss
                     });
                     quanLyThiDataContext.SubmitChanges();
                 }
-                    
+
                 if (cl.IsDung4)
                 {
                     quanLyThiDataContext.CauTraLois.InsertOnSubmit(new CauTraLoi
@@ -234,7 +277,7 @@ namespace QuanLyThiTracNghiem.GUI.HocSinhss
                     });
                     quanLyThiDataContext.SubmitChanges();
                 }
-                    
+
                 if (cl.IsDung5)
                 {
                     quanLyThiDataContext.CauTraLois.InsertOnSubmit(new CauTraLoi
@@ -246,7 +289,7 @@ namespace QuanLyThiTracNghiem.GUI.HocSinhss
                         CauHoiID = quanLyThiDataContext.CauHois.Where(p => p.CauHoiDeBai.Equals(cl.CauHoi)).Single().IDCauHoi
                     });
                     quanLyThiDataContext.SubmitChanges();
-                }    
+                }
                 if (cl.IsDung6)
                 {
                     quanLyThiDataContext.CauTraLois.InsertOnSubmit(new CauTraLoi
@@ -258,13 +301,42 @@ namespace QuanLyThiTracNghiem.GUI.HocSinhss
                         CauHoiID = quanLyThiDataContext.CauHois.Where(p => p.CauHoiDeBai.Equals(cl.CauHoi)).Single().IDCauHoi
                     });
                     quanLyThiDataContext.SubmitChanges();
-                }    
+                }
             }
 
-            //quanLyThiDataContext.BaiLamHs.InsertOnSubmit(new BaiLamH
-            //{
+            
 
-            //})
+
+            int total = quanLyThiDataContext.DeThi_CauHois.Where(p => p.MaDT.Equals(deThi.MaDeThi)).ToList().Count;
+            int socaudung = Socaudung();
+            float diem = tinhdiem();
+            quanLyThiDataContext.BaiLamHs.InsertOnSubmit(new BaiLamH
+            {
+                MaNguoiDung = hocsinh.NguoiDungID,
+                MaKT = _kythi.MaKT,
+                MaDT = deThi.MaDeThi,
+                DiemThi = diem.ToString()
+            });
+
+            MessageBox.Show($"Số câu đúng : {socaudung}/{total}\n" +
+                $"Số điểm : {diem}");
+        }
+
+        private bool kiemtradapan(List<CauTraLoi> dapan, List<DapAn> dapandung)
+        {
+            int total = dapandung.Count;
+            int i = 0;
+            foreach (CauTraLoi da in dapan)
+            {
+                foreach (DapAn dadung in dapandung)
+                {
+                    if (da.DapAn == dadung.STTDapAn)
+                        i++;
+                }
+            }
+            if (total != i)
+                return false;
+            return true;
         }
     }
 }
