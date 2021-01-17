@@ -231,7 +231,6 @@
             this.capHocDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.capDoDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cauHoiBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
-            this.btnXuatKetQuaKT = new System.Windows.Forms.Button();
             cauHoiDeBaiLabel = new System.Windows.Forms.Label();
             capHocLabel = new System.Windows.Forms.Label();
             capDoLabel = new System.Windows.Forms.Label();
