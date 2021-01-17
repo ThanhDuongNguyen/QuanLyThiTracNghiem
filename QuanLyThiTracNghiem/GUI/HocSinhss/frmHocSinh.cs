@@ -1,4 +1,5 @@
 ﻿using QuanLyThiTracNghiem.Data;
+using QuanLyThiTracNghiem.GUI.HocSinh;
 using QuanLyThiTracNghiem.Repository;
 using System;
 using System.Collections.Generic;
@@ -39,6 +40,13 @@ namespace QuanLyThiTracNghiem
             lblMaHS.DataBindings.Add(bindingMaHS);
             Binding bindingNgaySinh = new Binding("Text", hocSinh, "NgaySinh", true, DataSourceUpdateMode.OnPropertyChanged, true, "MM/dd/yyyy");
             lblNgaySinh.DataBindings.Add(bindingNgaySinh);
+        }
+
+        private void TracNghiemMenuItem_Click(object sender, EventArgs e)
+        {
+            HocSinh hocSinh = _hocSinhRepository.FindByCondition(p => p.NguoiDungID.Equals(_nguoiDung.IDNguoiDung)).SingleOrDefault();
+            LuaChonKiThi luaChonKiThi = new LuaChonKiThi(hocSinh);
+            luaChonKiThi.ShowDialog();
         }
     }
 }

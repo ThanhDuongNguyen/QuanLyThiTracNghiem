@@ -15,7 +15,10 @@ namespace QuanLyThiTracNghiem.Utils
         {
             QuanLyHocSinh,
             QuanLyGiaoVien,
-            KetQuaThi
+            KetQuaThi,
+            QuanLyCauHoi,
+            QuanLyKyThi,
+            QuanLyDeThi
         }
 
         public static bool KiemTraKetNoi(string connectionString)

@@ -40,7 +40,7 @@ namespace QuanLyThiTracNghiem.GUI.HeThong
                         frmGV.Show();
                         break;
                     case 3:
-                        HocSinh hocSinh = _authService.LayThongTinHocSinh(nguoiDung.IDNguoiDung);
+                        QuanLyThiTracNghiem.Data.HocSinh hocSinh = _authService.LayThongTinHocSinh(nguoiDung.IDNguoiDung);
                         frmHocSinh frmHocSinh = new frmHocSinh(nguoiDung);
                         frmHocSinh.ShowDialog();
                         break;

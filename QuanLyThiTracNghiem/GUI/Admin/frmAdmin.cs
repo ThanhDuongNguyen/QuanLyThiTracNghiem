@@ -43,19 +43,9 @@ namespace QuanLyThiTracNghiem
             dgvGiaoVien.CellFormatting += DgvGiaoVien_CellFormatting;
             dgvHocSinh.CellFormatting += DgvHocSinh_CellFormatting;
 
-            dgvGiaoVien.SelectionChanged += DgvGiaoVien_SelectionChanged;
-            dgvHocSinh.SelectionChanged += DgvHocSinh_SelectionChanged;
+            
         }
 
-        private void DgvHocSinh_SelectionChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void DgvGiaoVien_SelectionChanged(object sender, EventArgs e)
-        {
-
-        }
 
         //Che mật khẩu 
         private void DgvGiaoVien_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
@@ -480,6 +470,7 @@ namespace QuanLyThiTracNghiem
                         $"Số giáo viên thêm thành công: {soluongGVThanhCong}\n" +
                         $"Số học sinh bị trùng: {hocSinhTrung}\n" +
                         $"Số giáo viên bị trùng: {giaoVienTrung}\n");
+            ReLoad();
         }
 
         private void ExportMenuItem_Click(object sender, EventArgs e)
@@ -533,6 +524,16 @@ namespace QuanLyThiTracNghiem
                     wb.SaveAs(sfd.InitialDirectory + sfd.FileName);
                 }
             }
+        }
+
+        private void DangXuat_Click(object sender, EventArgs e)
+        {
+            Application.Restart();
+        }
+
+        private void Thoat_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 

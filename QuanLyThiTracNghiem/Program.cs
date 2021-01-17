@@ -25,7 +25,7 @@ namespace QuanLyThiTracNghiem
             string connectionString = ConfigurationManager.ConnectionStrings["QuanLyThiTracNghiem.Properties.Settings.QLThiConnectionString"].ConnectionString;
             if (Utils.Utils.KiemTraKetNoiTonTai(connectionString))
             {
-                Application.Run(new frmBackup());
+                Application.Run(new frmHocSinh(new Data.NguoiDung {IDNguoiDung = 531 }));
             }
             else
             {
